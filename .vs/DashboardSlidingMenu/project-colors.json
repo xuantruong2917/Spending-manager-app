@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7492f115-fd37-488e-92e0-9785be326e3a": {
+      "ProjectGuid": "7492f115-fd37-488e-92e0-9785be326e3a",
+      "DisplayName": "DashboardSlidingMenu",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
