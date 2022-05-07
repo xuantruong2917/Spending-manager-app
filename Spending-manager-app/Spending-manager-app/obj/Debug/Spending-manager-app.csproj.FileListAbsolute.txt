@@ -1,0 +1,14 @@
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\bin\Debug\Spending-manager-app.exe.config
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\bin\Debug\Spending-manager-app.exe
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\bin\Debug\Spending-manager-app.pdb
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.AssemblyReference.cache
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.SuggestedBindingRedirects.cache
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Form1.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_Login.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_Menu.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThuTien.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Properties.Resources.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.GenerateResource.cache
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.CoreCompileInputs.cache
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.exe
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.pdb
