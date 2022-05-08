@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Spending_manager_app
 {
-    public partial class Frm_ThuTien : Form
+    public partial class Frm_DsChoVay_ThuNo : Form
     {
-        public Frm_ThuTien()
+        public Frm_DsChoVay_ThuNo()
         {
             InitializeComponent();
         }

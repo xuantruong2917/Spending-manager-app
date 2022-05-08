@@ -75,7 +75,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 87);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Thu Tiền";
+            this.button4.Text = "Thu Tiền: bỏ";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -84,7 +84,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(84, 87);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Chi Tiền";
+            this.button5.Text = "Chi Tiền: bỏ";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -93,7 +93,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(84, 87);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Tra Cứu Thu Chi";
+            this.button6.Text = "Tra Cứu Thu Chi: bỏ";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
@@ -129,7 +129,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(84, 87);
             this.button10.TabIndex = 9;
-            this.button10.Text = "button10";
+            this.button10.Text = "Thu Chi";
             this.button10.UseVisualStyleBackColor = true;
             // 
             // button11

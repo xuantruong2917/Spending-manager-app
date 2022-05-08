@@ -12,3 +12,8 @@ E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\De
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.CoreCompileInputs.cache
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.exe
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.pdb
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DangKy.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSChiTien.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSThuTien.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThuChi.resources
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_TraCuuSoDu_ChuyenTienGiuaCacVi.resources

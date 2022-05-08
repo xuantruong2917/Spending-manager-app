@@ -52,6 +52,42 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_ChonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ChonVi.Designer.cs">
+      <DependentUpon>Frm_ChonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DangKy.Designer.cs">
+      <DependentUpon>Frm_DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DSChiTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DSChiTien.Designer.cs">
+      <DependentUpon>Frm_DSChiTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DsChoVay_ThuNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DsChoVay_ThuNo.Designer.cs">
+      <DependentUpon>Frm_DsChoVay_ThuNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DSDiVay_TraNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DSDiVay_TraNo.Designer.cs">
+      <DependentUpon>Frm_DSDiVay_TraNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DSThuTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DSThuTien.Designer.cs">
+      <DependentUpon>Frm_DSThuTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +100,40 @@
     <Compile Include="Frm_Menu.Designer.cs">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_ThuTien.cs">
+    <Compile Include="Frm_ThuChi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_ThuTien.Designer.cs">
-      <DependentUpon>Frm_ThuTien.cs</DependentUpon>
+    <Compile Include="Frm_ThuChi.Designer.cs">
+      <DependentUpon>Frm_ThuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TraCuuSoDu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TraCuuSoDu.Designer.cs">
+      <DependentUpon>Frm_TraCuuSoDu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ChonVi.resx">
+      <DependentUpon>Frm_ChonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DangKy.resx">
+      <DependentUpon>Frm_DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DSChiTien.resx">
+      <DependentUpon>Frm_DSChiTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DsChoVay_ThuNo.resx">
+      <DependentUpon>Frm_DsChoVay_ThuNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DSDiVay_TraNo.resx">
+      <DependentUpon>Frm_DSDiVay_TraNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DSThuTien.resx">
+      <DependentUpon>Frm_DSThuTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -81,8 +141,11 @@
     <EmbeddedResource Include="Frm_Menu.resx">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ThuTien.resx">
-      <DependentUpon>Frm_ThuTien.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_ThuChi.resx">
+      <DependentUpon>Frm_ThuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TraCuuSoDu.resx">
+      <DependentUpon>Frm_TraCuuSoDu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
