@@ -13,7 +13,6 @@ using Newtonsoft.Json;
 
 namespace Spending_manager_app
 {
-
     public class Account
     {
         public string token, user, name, phone, address;
@@ -154,6 +153,24 @@ namespace Spending_manager_app
             }
         }
 
+        public async Task<List<T>> POSTDataList<T>(string path, RestRequest request) where T : new()
+        {
+            try
+            {
+                var client = new RestClient(url + path + "?token=" + this.AccountInfo.token);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddHeader("Accept", "application/json");
+                T respones = await client.PostAsync<T>(request);
+                return respones;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi HTTP POST: {ex.ToString()}", "Có lỗi xảy ra", MessageBoxButtons.OK);
+                List<T> respones = await POSTDataList<T>(path, request);
+                return respones;
+            }
+        }
+            
 
         public void TryLogin(string hashedPassword)
         {
@@ -164,7 +181,9 @@ namespace Spending_manager_app
         /// Account
         private void FetchAccountInfo()
         {
-
+            var task = Task.Run<Account>(async() => await POSTData<Account>("accountinfo", new RestRequest()));
+            task.Wait();
+            this.AccountInfo = task.Result;
         }
 
         public Account GetAccountInfo()
@@ -178,7 +197,12 @@ namespace Spending_manager_app
         /// Wallets
         private void FetchWallets()
         {
-
+            var task = Task.Run<Wallet[]>(async () => await POSTData<Wallet[]>("wallets", new RestRequest()));
+            task.Wait();
+            Wallet[] wallets = task.Result;
+            this.wallets.Clear();
+            foreach (Wallet wallet in wallets)
+                    this.wallets.Add(wallet);
         }
 
         public List<Wallet> GetWallets()
