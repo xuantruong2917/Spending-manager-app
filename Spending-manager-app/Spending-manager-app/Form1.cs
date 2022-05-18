@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using RestSharp;
+
 namespace Spending_manager_app
 {
     public partial class Form1 : Form
@@ -15,6 +17,11 @@ namespace Spending_manager_app
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AppPlatform.API.POSTData<AppAPI>(new RestRequest());
         }
     }
 }
