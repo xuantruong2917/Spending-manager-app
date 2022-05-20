@@ -1,2 +1,0 @@
-H:\Learning\C#\Spending-manager-app\Spending-manager-app\AppPlaform\obj\Debug\AppPlaform.csproj.AssemblyReference.cache
-H:\Learning\C#\Spending-manager-app\Spending-manager-app\AppPlaform\obj\Debug\AppPlaform.csproj.CoreCompileInputs.cache
