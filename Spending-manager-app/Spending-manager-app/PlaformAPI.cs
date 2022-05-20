@@ -7,236 +7,289 @@ using System.Numerics;
 using System.Windows.Forms;
 using System.Net;
 using System.Text.Json;
-using BCrypt.Net;
+using System.Security.Cryptography;
 using RestSharp;
 using Newtonsoft.Json;
 
 namespace Spending_manager_app
 {
+
+    public class Response
+    {
+        public string Content;
+        public HttpStatusCode StatusCode;
+    }
+
     public class Account
     {
-        public string token, user, name, phone, address;
+        public string username, fullname, phone, address;
+        public long createdOn;
         public void ChangePassword(string newPassword)
         {
             string hashedPassword = AppPlatform.HashPassword(newPassword);
+            var result = AppPlatform.API.POSTData("editaccount", new { password = hashedPassword });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+        }
+        public void ChangeInfo(string new_fullname, string new_phone, string new_address)
+        {
+            var result = AppPlatform.API.POSTData("editaccount", new { fullname = new_fullname, phone = new_phone, address = new_address });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
 
-
+            Account account = AppPlatform.API.GetAccountInfo();
+            this.fullname = account.fullname;
+            this.phone = account.phone;
+            this.address = account.address;
         }
     }
 
     // Thông tin ví và các hàm canh thiệp ví;
     public class Wallet
     {
-        private string id;
+        public string id;
         public string walletName, type;
         public double balance;
-        public DateTime createdOn;
+        public long createdOn;
 
         // Thu
         public void Deposit(double amount, string info)
         {
-            Transaction trans = new Transaction();
-            trans.walletName = this.walletName;
-            trans.amount = amount; // Thu => Dương
-            trans.info = info;
-
-
-
+            var result = AppPlatform.API.POSTData("wallet/deposit", new { walletId = this.id, amount = amount, info = info });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
         }
 
         // Chi
         public void Withdraw(double amount, string info)
         {
-            Transaction trans = new Transaction();
-            trans.walletName = this.walletName;
-            trans.amount = -amount; // Chi => Âm
-            trans.info = info;
-
-
+            var result = AppPlatform.API.POSTData("wallet/withdraw", new { walletId = this.id, amount = amount, info = info });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
         }
 
         public void Transfer(double amount, Wallet walletRecive)
         {
-            string info = $"Giao dịch chuyển {AppPlatform.MoneyFormat(amount)} từ {this.walletName} sang {walletRecive.walletName}";
+            string info = $"Giao dịch chuyển {AppPlatform.MoneyFormat(amount)} từ Ví {this.walletName} sang Ví {walletRecive.walletName}";
             this.Withdraw(amount, info);
             walletRecive.Deposit(amount, info);
+            this.Load();
+            walletRecive.Load();
         }
 
         //Tạo giao dịch cho vay
         public void CreateLoan(double amount, string debtor, string info)
         {
-            Loan loan = new Loan();
-            loan.walletName = this.walletName;
-            loan.amount = amount;
-            loan.debtor = debtor;
-            loan.info = info;
-
-
-
+            var result = AppPlatform.API.POSTData("wallet/createloan", new { walletId = this.id, amount = amount, debtor = debtor, info = info });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
         }
 
         //Tạo giao dịch vay
         public void CreateDebt(double amount, string lender, string info)
         {
-            Debt debt = new Debt();
-            debt.walletName = this.walletName;
-            debt.amount = amount;
-            debt.lender = lender;
-            debt.info = info;
+            var result = AppPlatform.API.POSTData("wallet/createdebt", new { walletId = this.id, amount = amount, lender = lender, info = info });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
+        }
 
-
-
+        public List<Loan> GetLoans()
+        {
+            var response = AppPlatform.API.POSTData("wallet/loans", new {walletId = this.id });
+            return AppPlatform.JSONParse<List<Loan>>(response.Content);
         }
 
 
+        public List<Debt> GetDebts()
+        {
+            var response = AppPlatform.API.POSTData("wallet/debts", new {walletId = this.id });
+            return AppPlatform.JSONParse<List<Debt>>(response.Content);
+        }
+
+
+        //Thu Nợ
+        public void PayLoan(Loan loan)
+        {
+            if (loan.isPaymented)
+            {
+                MessageBox.Show("Khoảng cho vay này đang ở trạng thái ĐÃ THU", "Thông báo");
+                return;
+            }
+
+            var result = AppPlatform.API.POSTData("wallet/payloan", new { walletId = this.id, loanId = loan.id});
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
+        }
+        // Trả Nợ
+        public void PayDebt(Debt debt)
+        {
+            if (debt.isPaymented)
+            {
+                MessageBox.Show("Khoảng vay này đang ở trạng thái ĐÃ TRẢ", "Thông báo");
+                return;
+            }
+
+            var result = AppPlatform.API.POSTData("wallet/paydebt", new { walletId = this.id, debtId = debt.id});
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
+        }
+
+        public List<Transaction> GetTransactions()
+        {
+            var response = AppPlatform.API.POSTData("wallet/transactions", new { walletId = this.id });
+            return AppPlatform.JSONParse<List<Transaction>>(response.Content);
+        }
+
+        public void Load()
+        {
+            var response = AppPlatform.API.POSTData("wallet/load", new { walletId = this.id });
+            Wallet wallet = AppPlatform.JSONParse<Wallet>(response.Content);
+            this.walletName = wallet.walletName;
+            this.type = wallet.type;
+            this.balance = wallet.balance;
+        }
     }
 
     // Thông tin giao dịch
     public class Transaction
     {
-        private string id;
+        public string id;
         public string walletName;
         public double amount;
         public string info;
+        public long createdOn;
     }
 
     // Thông tin Cho Vay
     public class Loan
     {
-        private string id;
+        public string id;
         public string walletName, debtor, info;
         public double amount;
-        public DateTime createdOn, paymentedOn;
+        public long createdOn, paymentedOn;
         public bool isPaymented = false;
+
     }
 
     // Thông tin Vay
     public class Debt
     {
-        private string id;
+        public string id;
         public string walletName, lender, info;
         public double amount;
-        public DateTime createdOn, paymentedOn;
+        public long createdOn, paymentedOn;
         public bool isPaymented = false;
     }
 
     public class AppAPI
     {
-        private string url = "";
-        public Account AccountInfo;
-        public List<Wallet> wallets = new List<Wallet>();
-        public List<Loan> loans = new List<Loan>();
-        public List<Debt> debts = new List<Debt>();
+        public string url = "https://spendingmanagerserver-production.up.railway.app/";
+        public string token = "";
         public bool isLogin = false;
 
 
-        /*
-            var task = Task.Run<Account>(async () => await POSTData<Account>(new RestRequest()));
-            task.Wait();
-            Account account = task.Result;
-         */
-        public async Task<T> POSTData<T>(string path, RestRequest request) where T : new()
+        public Response POSTData(string path, object body)
+        {
+            if (this.token == "")
+            {
+                MessageBox.Show("Vui lòng đăng nhập trước khi sử dụng tính năng", "Thông Báo");
+                Frm_Login loginForm = new Frm_Login();
+                loginForm.ShowDialog();
+            }
+
+            return PostRequest(path, body);
+        }
+
+        public Response PostRequest(string path, object body)
         {
             try
             {
-                var client = new RestClient(url + path + "?token=" + this.AccountInfo.token);
-                request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Accept", "application/json");
-                T respones = await client.PostAsync<T>(request);
-                return respones;
+                var client = new RestClient(this.url);
+                var request = new RestRequest(path, Method.POST);
+                request.AddHeader("token-user", this.token);
+                request.AddJsonBody(body);
+
+                var response = client.Execute(request);
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    dynamic res = AppPlatform.JSONParse<object>(response.Content);
+                    MessageBox.Show($"Lỗi xác thực: {res.error}", "Có lỗi xảy ra", MessageBoxButtons.OK);
+                    this.token = "";
+                    return POSTData(path, body);
+                }
+                else if(response.StatusCode != HttpStatusCode.OK)
+                {
+                    dynamic res = AppPlatform.JSONParse<object>(response.Content);
+                    MessageBox.Show($"Lỗi : {res.error}", "Có lỗi xảy ra", MessageBoxButtons.OK);
+                    var tryAgain = PostRequest(path, body);
+                    return tryAgain;
+                }
+                
+                return new Response
+                {
+                    Content = response.Content,
+                    StatusCode = response.StatusCode
+                };
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 MessageBox.Show($"Lỗi HTTP POST: {ex.ToString()}", "Có lỗi xảy ra", MessageBoxButtons.OK);
-                T respones = await POSTData<T>(path, request);
-                return respones;
+                var tryAgain = PostRequest(path, body);
+                return tryAgain;
             }
         }
 
-        public async Task<List<T>> POSTDataList<T>(string path, RestRequest request) where T : new()
+        public bool Login(string user, string password)
         {
-            try
-            {
-                var client = new RestClient(url + path + "?token=" + this.AccountInfo.token);
-                request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Accept", "application/json");
-                T respones = await client.PostAsync<T>(request);
-                return respones;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi HTTP POST: {ex.ToString()}", "Có lỗi xảy ra", MessageBoxButtons.OK);
-                List<T> respones = await POSTDataList<T>(path, request);
-                return respones;
-            }
-        }
+            string hashedPassword = AppPlatform.HashPassword(password);
+            var res = PostRequest("login", new { username = user, password = hashedPassword });
             
+            dynamic data = AppPlatform.JSONParse<object>(res.Content);
+            this.token = data.token.ToString();
+            this.isLogin = (this.token != "");
 
-        public void TryLogin(string hashedPassword)
-        {
-
-            this.isLogin = true;
+            return this.isLogin;
         }
 
-        /// Account
-        private void FetchAccountInfo()
+        public string SignUp(string username, string password, string fullname, string phone, string address)
         {
-            var task = Task.Run<Account>(async() => await POSTData<Account>("accountinfo", new RestRequest()));
-            task.Wait();
-            this.AccountInfo = task.Result;
+            string hashedPassword = AppPlatform.HashPassword(password);
+            var res = PostRequest("signup", new  {
+                username = username, 
+                password = hashedPassword,
+                fullname = fullname,
+                phone = phone,  
+                address = address
+            });
+            dynamic data = AppPlatform.JSONParse<object>(res.Content);
+
+            return data.message;
         }
 
         public Account GetAccountInfo()
         {
-            FetchAccountInfo();
-            return this.AccountInfo;
+            var response = POSTData("account", new { });
+            return AppPlatform.JSONParse<Account>(response.Content); 
         }
-        /// 
 
-
-        /// Wallets
-        private void FetchWallets()
-        {
-            var task = Task.Run<Wallet[]>(async () => await POSTData<Wallet[]>("wallets", new RestRequest()));
-            task.Wait();
-            Wallet[] wallets = task.Result;
-            this.wallets.Clear();
-            foreach (Wallet wallet in wallets)
-                    this.wallets.Add(wallet);
-        }
 
         public List<Wallet> GetWallets()
         {
-            FetchWallets();
-            return this.wallets;
-        }
-        /// 
-
-
-        /// Loan
-        private void FetchLoans()
-        {
-
+            var response = POSTData("wallets", new { });
+            return AppPlatform.JSONParse<List<Wallet>>(response.Content);
         }
 
-        public List<Loan> GetLoans()
+        public void CreateWallet(string walletName, string type)
         {
-            FetchLoans();
-            return this.loans;
-        }
-        /// 
-
-
-        /// Debt
-        private void FetchDebts()
-        {
-
-        }
-
-        public List<Debt> GetDebts()
-        {
-            FetchDebts();
-            return this.debts;
+            var result = POSTData("createwallet", new { walletName = walletName, type = type});
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
         }
     }
 
@@ -245,7 +298,18 @@ namespace Spending_manager_app
         public static AppAPI API = new AppAPI();
         public static string HashPassword(string password)
         {
-            return BCrypt.Net.BCrypt.HashPassword(password);
+            var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+            using (var hash = SHA512.Create())
+            {
+                var hashedInputBytes = hash.ComputeHash(bytes);
+
+                // Convert to text
+                // StringBuilder Capacity is 128, because 512 bits / 8 bits in byte * 2 symbols for byte 
+                var hashedInputStringBuilder = new System.Text.StringBuilder(128);
+                foreach (var b in hashedInputBytes)
+                    hashedInputStringBuilder.Append(b.ToString("X2"));
+                return hashedInputStringBuilder.ToString();
+            }
         }
 
         public static string MoneyFormat(double amount)
@@ -254,17 +318,16 @@ namespace Spending_manager_app
             return money;
         }
 
-        public static void Login(string password)
+        public static T JSONParse<T>(string value)
         {
-            string hashedPassword = HashPassword(password);
-            API.TryLogin(hashedPassword);
-            API.GetAccountInfo();
+            return JsonConvert.DeserializeObject<T>(value);
         }
 
-        public static void SignUp(string username, string password)
+        public static string JSONStringify(Object value)
         {
-
+            return JsonConvert.SerializeObject(value);
         }
+
 
 
     }

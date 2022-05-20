@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using RestSharp;
 
 namespace Spending_manager_app
 {
@@ -21,7 +20,9 @@ namespace Spending_manager_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AppPlatform.API.POSTData<AppAPI>(new RestRequest());
+            var info = AppPlatform.API.GetAccountInfo();
+
+    
         }
     }
 }

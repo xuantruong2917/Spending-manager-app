@@ -17,6 +17,35 @@ namespace Spending_manager_app
             InitializeComponent();
         }
 
-       
+        private void sign_in_Click(object sender, EventArgs e)
+        {
+            Form SignInForm = new Frm_DangKy();
+            SignInForm.ShowDialog();
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            if (this.username.Text == "") 
+            {
+                MessageBox.Show("Vui lòng nhập tên đăng nhập", "Có lỗi xảy ra");
+                return;
+            }
+
+            if (this.password.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu", "Có lỗi xảy ra");
+                return;
+            }
+               
+
+            bool loginSuccessed = AppPlatform.API.Login(this.username.Text, this.password.Text);
+            if (!loginSuccessed)
+                MessageBox.Show("Tài khoản không tồn tại hoặc mật khẩu không hợp lệ", "Lỗi đăng nhập");
+            else
+            {
+                MessageBox.Show("Đăng nhập thành công", "Thông Báo");
+                this.Close();
+            }
+        }
     }
 }
