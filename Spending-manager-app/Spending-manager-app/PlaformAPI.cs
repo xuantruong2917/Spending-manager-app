@@ -189,7 +189,7 @@ namespace Spending_manager_app
 
     public class AppAPI
     {
-        public string url = https://spendingmanager.up.railway.app/";
+        public string url = "https://spendingmanager.up.railway.app/";
         public string token = "";
         public bool isLogin = false;
 
