@@ -83,3 +83,4 @@ E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\De
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DsChoVay_ThuNo.resources
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSDiVay_TraNo.resources
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.CopyComplete
+E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThongTinCaNhan.resources

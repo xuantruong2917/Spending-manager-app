@@ -78,6 +78,14 @@ namespace Spending_manager_app
         private void btn_ChonVi_Click(object sender, EventArgs e)
         {
             Frm_ChonVi frm = new Frm_ChonVi();
+           // this.Hide();
+            frm.ShowDialog();
+            
+        }
+
+        private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            Frm_ThongTinCaNhan frm = new Frm_ThongTinCaNhan();
             frm.ShowDialog();
         }
     }

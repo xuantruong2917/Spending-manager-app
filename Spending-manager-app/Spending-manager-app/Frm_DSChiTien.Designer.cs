@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("12323");
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -163,6 +164,8 @@
             this.LV_Data.FullRowSelect = true;
             this.LV_Data.GridLines = true;
             this.LV_Data.HideSelection = false;
+            this.LV_Data.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
             this.LV_Data.Location = new System.Drawing.Point(0, 0);
             this.LV_Data.Margin = new System.Windows.Forms.Padding(4);
             this.LV_Data.Name = "LV_Data";
@@ -180,6 +183,7 @@
             this.Controls.Add(this.LV_Data);
             this.Name = "Frm_DSChiTien";
             this.Text = "Frm_DSChiTien";
+            this.Load += new System.EventHandler(this.Frm_DSChiTien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

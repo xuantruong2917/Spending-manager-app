@@ -31,17 +31,17 @@
             this.btn_TraCuuSoDu = new System.Windows.Forms.Button();
             this.btn_ChuyenTienGiuaCacVi = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_ChonVi = new System.Windows.Forms.Button();
+            this.btn_ChucNang = new System.Windows.Forms.Button();
             this.btn_ThongTinCaNhan = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_DSDiVay = new System.Windows.Forms.Button();
-            this.btn_DSChoVay = new System.Windows.Forms.Button();
-            this.btn_DSChiTien = new System.Windows.Forms.Button();
-            this.btn_DSThuTien = new System.Windows.Forms.Button();
-            this.btn_ChucNang = new System.Windows.Forms.Button();
-            this.btn_ChonVi = new System.Windows.Forms.Button();
             this.btn_ThemVi = new System.Windows.Forms.Button();
+            this.btn_DSThuTien = new System.Windows.Forms.Button();
+            this.btn_DSChiTien = new System.Windows.Forms.Button();
+            this.btn_DSChoVay = new System.Windows.Forms.Button();
+            this.btn_DSDiVay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,28 @@
             this.panel1.Size = new System.Drawing.Size(298, 733);
             this.panel1.TabIndex = 4;
             // 
+            // btn_ChonVi
+            // 
+            this.btn_ChonVi.Location = new System.Drawing.Point(31, 408);
+            this.btn_ChonVi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_ChonVi.Name = "btn_ChonVi";
+            this.btn_ChonVi.Size = new System.Drawing.Size(231, 59);
+            this.btn_ChonVi.TabIndex = 7;
+            this.btn_ChonVi.Text = "Chọn Ví";
+            this.btn_ChonVi.UseVisualStyleBackColor = true;
+            this.btn_ChonVi.Click += new System.EventHandler(this.btn_ChonVi_Click);
+            // 
+            // btn_ChucNang
+            // 
+            this.btn_ChucNang.Location = new System.Drawing.Point(31, 326);
+            this.btn_ChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_ChucNang.Name = "btn_ChucNang";
+            this.btn_ChucNang.Size = new System.Drawing.Size(231, 59);
+            this.btn_ChucNang.TabIndex = 6;
+            this.btn_ChucNang.Text = "Chức Năng";
+            this.btn_ChucNang.UseVisualStyleBackColor = true;
+            this.btn_ChucNang.Click += new System.EventHandler(this.btn_ChucNang_Click);
+            // 
             // btn_ThongTinCaNhan
             // 
             this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(31, 233);
@@ -91,6 +113,7 @@
             this.btn_ThongTinCaNhan.TabIndex = 5;
             this.btn_ThongTinCaNhan.Text = "Thông Tin Cá Nhân";
             this.btn_ThongTinCaNhan.UseVisualStyleBackColor = true;
+            this.btn_ThongTinCaNhan.Click += new System.EventHandler(this.btn_ThongTinCaNhan_Click);
             // 
             // btn_Exit
             // 
@@ -125,38 +148,16 @@
             this.panel3.Size = new System.Drawing.Size(741, 633);
             this.panel3.TabIndex = 6;
             // 
-            // btn_DSDiVay
+            // btn_ThemVi
             // 
-            this.btn_DSDiVay.Location = new System.Drawing.Point(402, 265);
-            this.btn_DSDiVay.Name = "btn_DSDiVay";
-            this.btn_DSDiVay.Size = new System.Drawing.Size(231, 65);
-            this.btn_DSDiVay.TabIndex = 9;
-            this.btn_DSDiVay.Text = "Danh Sách Đi Vay - Trả Nợ";
-            this.btn_DSDiVay.UseVisualStyleBackColor = true;
-            this.btn_DSDiVay.Visible = false;
-            this.btn_DSDiVay.Click += new System.EventHandler(this.btn_DSDiVay_Click);
-            // 
-            // btn_DSChoVay
-            // 
-            this.btn_DSChoVay.Location = new System.Drawing.Point(107, 265);
-            this.btn_DSChoVay.Name = "btn_DSChoVay";
-            this.btn_DSChoVay.Size = new System.Drawing.Size(231, 65);
-            this.btn_DSChoVay.TabIndex = 8;
-            this.btn_DSChoVay.Text = "Danh Sách Cho Vay - Thu Nợ";
-            this.btn_DSChoVay.UseVisualStyleBackColor = true;
-            this.btn_DSChoVay.Visible = false;
-            this.btn_DSChoVay.Click += new System.EventHandler(this.btn_DSChoVay_Click);
-            // 
-            // btn_DSChiTien
-            // 
-            this.btn_DSChiTien.Location = new System.Drawing.Point(107, 162);
-            this.btn_DSChiTien.Name = "btn_DSChiTien";
-            this.btn_DSChiTien.Size = new System.Drawing.Size(231, 65);
-            this.btn_DSChiTien.TabIndex = 7;
-            this.btn_DSChiTien.Text = "Danh Sách Chi Tiền";
-            this.btn_DSChiTien.UseVisualStyleBackColor = true;
-            this.btn_DSChiTien.Visible = false;
-            this.btn_DSChiTien.Click += new System.EventHandler(this.btn_DSChiTien_Click);
+            this.btn_ThemVi.Location = new System.Drawing.Point(107, 473);
+            this.btn_ThemVi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_ThemVi.Name = "btn_ThemVi";
+            this.btn_ThemVi.Size = new System.Drawing.Size(231, 59);
+            this.btn_ThemVi.TabIndex = 10;
+            this.btn_ThemVi.Text = "Thêm Ví";
+            this.btn_ThemVi.UseVisualStyleBackColor = true;
+            this.btn_ThemVi.Visible = false;
             // 
             // btn_DSThuTien
             // 
@@ -169,38 +170,38 @@
             this.btn_DSThuTien.Visible = false;
             this.btn_DSThuTien.Click += new System.EventHandler(this.btn_DSThuTien_Click);
             // 
-            // btn_ChucNang
+            // btn_DSChiTien
             // 
-            this.btn_ChucNang.Location = new System.Drawing.Point(31, 326);
-            this.btn_ChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_ChucNang.Name = "btn_ChucNang";
-            this.btn_ChucNang.Size = new System.Drawing.Size(231, 59);
-            this.btn_ChucNang.TabIndex = 6;
-            this.btn_ChucNang.Text = "Chức Năng";
-            this.btn_ChucNang.UseVisualStyleBackColor = true;
-            this.btn_ChucNang.Click += new System.EventHandler(this.btn_ChucNang_Click);
+            this.btn_DSChiTien.Location = new System.Drawing.Point(107, 162);
+            this.btn_DSChiTien.Name = "btn_DSChiTien";
+            this.btn_DSChiTien.Size = new System.Drawing.Size(231, 65);
+            this.btn_DSChiTien.TabIndex = 7;
+            this.btn_DSChiTien.Text = "Danh Sách Chi Tiền";
+            this.btn_DSChiTien.UseVisualStyleBackColor = true;
+            this.btn_DSChiTien.Visible = false;
+            this.btn_DSChiTien.Click += new System.EventHandler(this.btn_DSChiTien_Click);
             // 
-            // btn_ChonVi
+            // btn_DSChoVay
             // 
-            this.btn_ChonVi.Location = new System.Drawing.Point(31, 408);
-            this.btn_ChonVi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_ChonVi.Name = "btn_ChonVi";
-            this.btn_ChonVi.Size = new System.Drawing.Size(231, 59);
-            this.btn_ChonVi.TabIndex = 7;
-            this.btn_ChonVi.Text = "Chọn Ví";
-            this.btn_ChonVi.UseVisualStyleBackColor = true;
-            this.btn_ChonVi.Click += new System.EventHandler(this.btn_ChonVi_Click);
+            this.btn_DSChoVay.Location = new System.Drawing.Point(107, 265);
+            this.btn_DSChoVay.Name = "btn_DSChoVay";
+            this.btn_DSChoVay.Size = new System.Drawing.Size(231, 65);
+            this.btn_DSChoVay.TabIndex = 8;
+            this.btn_DSChoVay.Text = "Danh Sách Cho Vay - Thu Nợ";
+            this.btn_DSChoVay.UseVisualStyleBackColor = true;
+            this.btn_DSChoVay.Visible = false;
+            this.btn_DSChoVay.Click += new System.EventHandler(this.btn_DSChoVay_Click);
             // 
-            // btn_ThemVi
+            // btn_DSDiVay
             // 
-            this.btn_ThemVi.Location = new System.Drawing.Point(107, 473);
-            this.btn_ThemVi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_ThemVi.Name = "btn_ThemVi";
-            this.btn_ThemVi.Size = new System.Drawing.Size(231, 59);
-            this.btn_ThemVi.TabIndex = 10;
-            this.btn_ThemVi.Text = "Thêm Ví";
-            this.btn_ThemVi.UseVisualStyleBackColor = true;
-            this.btn_ThemVi.Visible = false;
+            this.btn_DSDiVay.Location = new System.Drawing.Point(402, 265);
+            this.btn_DSDiVay.Name = "btn_DSDiVay";
+            this.btn_DSDiVay.Size = new System.Drawing.Size(231, 65);
+            this.btn_DSDiVay.TabIndex = 9;
+            this.btn_DSDiVay.Text = "Danh Sách Đi Vay - Trả Nợ";
+            this.btn_DSDiVay.UseVisualStyleBackColor = true;
+            this.btn_DSDiVay.Visible = false;
+            this.btn_DSDiVay.Click += new System.EventHandler(this.btn_DSDiVay_Click);
             // 
             // Frm_Menu
             // 

@@ -16,5 +16,10 @@ namespace Spending_manager_app
         {
             InitializeComponent();
         }
+
+        private void btn_TaoMoi_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

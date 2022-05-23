@@ -17,13 +17,13 @@ namespace Spending_manager_app
             InitializeComponent();
         }
 
-        private void sign_in_Click(object sender, EventArgs e)
+        private void btn_Sign_in_Click(object sender, EventArgs e)
         {
             Form SignInForm = new Frm_DangKy();
             SignInForm.ShowDialog();
         }
 
-        private void login_Click(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
             if (this.username.Text == "") 
             {
@@ -44,7 +44,9 @@ namespace Spending_manager_app
             else
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông Báo");
-                this.Close();
+                //this.Close();
+                Frm_Menu frm = new Frm_Menu();
+                frm.ShowDialog();
             }
         }
     }
