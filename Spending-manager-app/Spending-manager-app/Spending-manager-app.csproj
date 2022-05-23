@@ -192,12 +192,6 @@
     <Compile Include="Frm_Menu.Designer.cs">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_ThuChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_ThuChi.Designer.cs">
-      <DependentUpon>Frm_ThuChi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_TraCuuSoDu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,9 +226,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu.resx">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ThuChi.resx">
-      <DependentUpon>Frm_ThuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_TraCuuSoDu.resx">
       <DependentUpon>Frm_TraCuuSoDu.cs</DependentUpon>
