@@ -52,6 +52,14 @@ namespace Spending_manager_app
         public double balance;
         public long createdOn;
 
+        public void ChangeInfo(string new_walletName, string new_type)
+        {
+            var result = AppPlatform.API.POSTData("wallet/edit", new { walletId = this.id, walletName = new_walletName, type = new_type });
+            dynamic response = AppPlatform.JSONParse<Object>(result.Content);
+            MessageBox.Show(response.message.ToString(), "Thông Báo");
+            this.Load();
+        }
+
         // Thu
         public void Deposit(double amount, string info)
         {
@@ -193,6 +201,19 @@ namespace Spending_manager_app
         public string token = "";
         public bool isLogin = false;
 
+        public AppAPI()
+        {
+            while (true)
+            {
+                Frm_Login loginForm = new Frm_Login();
+                loginForm.ShowDialog();
+
+                if (this.token == "")
+                    MessageBox.Show("Vui lòng đăng nhập trước khi sử dụng");
+                else
+                    break;
+            }
+        }
 
         public Response POSTData(string path, object body)
         {
@@ -327,7 +348,6 @@ namespace Spending_manager_app
         {
             return JsonConvert.SerializeObject(value);
         }
-
 
 
     }
