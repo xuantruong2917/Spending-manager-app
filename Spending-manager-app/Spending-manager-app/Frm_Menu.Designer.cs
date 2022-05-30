@@ -214,6 +214,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_Menu";
             this.Text = "Frm_Menu";
+            this.Load += new System.EventHandler(this.Frm_Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);

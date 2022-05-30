@@ -88,6 +88,11 @@ namespace Spending_manager_app
             Frm_ThongTinCaNhan frm = new Frm_ThongTinCaNhan();
             frm.ShowDialog();
         }
+
+        private void Frm_Menu_Load(object sender, EventArgs e)
+        {
+            AppPlatform.API.GetAccountInfo();
+        }
     }
 
 }
