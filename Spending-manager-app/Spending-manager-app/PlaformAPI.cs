@@ -200,17 +200,20 @@ namespace Spending_manager_app
         public string url = "https://spendingmanager.up.railway.app/";
         public string token = "";
         public bool isLogin = false;
-        public bool firstLogin = false;
+        public bool firstLogin = true;
 
 
 
         public Response POSTData(string path, object body)
         {   
 
-            if (!this.firstLogin || this.token == "")
+            if (this.token == "")
             {
-                if (this.firstLogin)
+                if (!this.firstLogin)
                     MessageBox.Show("Vui lòng đăng nhập trước khi sử dụng tính năng", "Thông Báo");
+                else
+                    this.firstLogin = false;
+
 
                 Frm_Login loginForm = new Frm_Login();
                 loginForm.ShowDialog();

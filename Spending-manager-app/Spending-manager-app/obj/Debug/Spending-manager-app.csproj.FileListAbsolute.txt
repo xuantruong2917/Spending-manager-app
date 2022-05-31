@@ -29,7 +29,6 @@ H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\ob
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSThuTien.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_Login.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_Menu.resources
-H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThuChi.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_TraCuuSoDu_ChuyenTienGiuaCacVi.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Properties.Resources.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.GenerateResource.cache
@@ -84,3 +83,4 @@ E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\De
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSDiVay_TraNo.resources
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.CopyComplete
 E:\pmmoney\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThongTinCaNhan.resources
+H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ThongTinCaNhan.resources

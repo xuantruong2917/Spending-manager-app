@@ -44,9 +44,7 @@ namespace Spending_manager_app
             else
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông Báo");
-                //this.Close();
-                Frm_Menu frm = new Frm_Menu();
-                frm.ShowDialog();
+                this.Close();
             }
         }
     }
