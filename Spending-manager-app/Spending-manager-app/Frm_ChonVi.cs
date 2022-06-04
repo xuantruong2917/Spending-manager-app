@@ -19,7 +19,15 @@ namespace Spending_manager_app
 
         private void btn_TaoMoi_Click(object sender, EventArgs e)
         {
-            
+            string chonvi = cbb_ChonVi.Text;
+            string loaivi = cbb_LoaiVi.Text;
+            if (cbb_ChonVi.Text == "  ---Nhấp Để Chọn---")
+               chonvi= "";
+            if (cbb_LoaiVi.Text == "  ---Nhấp Để Chọn---")
+                loaivi = "";
+            AppPlatform.API.CreateWallet(chonvi,loaivi);
+
+
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Spending_manager_app
                 MessageBox.Show("Tài khoản không tồn tại hoặc mật khẩu không hợp lệ", "Lỗi đăng nhập");
             else
             {
-               // MessageBox.Show("Đăng nhập thành công", "Thông Báo");
+                //MessageBox.Show("Đăng nhập thành công", "Thông Báo");
                 this.Close();
             }
         }
