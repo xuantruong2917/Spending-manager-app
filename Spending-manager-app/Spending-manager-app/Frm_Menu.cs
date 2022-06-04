@@ -93,6 +93,11 @@ namespace Spending_manager_app
         {
             AppPlatform.API.GetAccountInfo();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

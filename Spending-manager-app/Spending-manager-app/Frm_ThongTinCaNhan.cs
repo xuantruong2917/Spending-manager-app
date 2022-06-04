@@ -32,5 +32,7 @@ namespace Spending_manager_app
             Account account = AppPlatform.API.GetAccountInfo();
             account.ChangeInfo(txt_FullName.Text, txt_SDT.Text, txt_DiaChi.Text);
         }
+
+        
     }
 }

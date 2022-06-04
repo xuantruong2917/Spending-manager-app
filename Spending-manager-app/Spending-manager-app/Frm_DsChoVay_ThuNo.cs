@@ -238,5 +238,7 @@ namespace Spending_manager_app
         #region [ ThuNo ]
 
         #endregion
+
+        
     }
 }

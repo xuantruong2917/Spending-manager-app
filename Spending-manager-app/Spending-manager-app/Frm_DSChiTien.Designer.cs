@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("12323");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("12323");
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Apply = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Apply);
             this.panel1.Controls.Add(this.btn_Create);
@@ -70,79 +70,100 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(322, 416);
+            this.btn_Delete.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Delete.Location = new System.Drawing.Point(298, 416);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(93, 45);
+            this.btn_Delete.Size = new System.Drawing.Size(117, 98);
             this.btn_Delete.TabIndex = 26;
             this.btn_Delete.Text = "Xóa";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Apply
             // 
-            this.btn_Apply.Location = new System.Drawing.Point(186, 416);
+            this.btn_Apply.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Apply.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Apply.ForeColor = System.Drawing.Color.White;
+            this.btn_Apply.Location = new System.Drawing.Point(162, 416);
             this.btn_Apply.Name = "btn_Apply";
-            this.btn_Apply.Size = new System.Drawing.Size(95, 45);
+            this.btn_Apply.Size = new System.Drawing.Size(119, 98);
             this.btn_Apply.TabIndex = 25;
             this.btn_Apply.Text = "Cập Nhật";
-            this.btn_Apply.UseVisualStyleBackColor = true;
+            this.btn_Apply.UseVisualStyleBackColor = false;
             this.btn_Apply.Click += new System.EventHandler(this.btn_Apply_Click);
             // 
             // btn_Create
             // 
-            this.btn_Create.Location = new System.Drawing.Point(45, 416);
+            this.btn_Create.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Create.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Create.ForeColor = System.Drawing.Color.White;
+            this.btn_Create.Location = new System.Drawing.Point(21, 416);
             this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(88, 45);
+            this.btn_Create.Size = new System.Drawing.Size(112, 98);
             this.btn_Create.TabIndex = 24;
             this.btn_Create.Text = "Tạo Mới";
-            this.btn_Create.UseVisualStyleBackColor = true;
+            this.btn_Create.UseVisualStyleBackColor = false;
             this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // txt_SoTienChi
             // 
+            this.txt_SoTienChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_SoTienChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SoTienChi.Location = new System.Drawing.Point(163, 195);
             this.txt_SoTienChi.Name = "txt_SoTienChi";
-            this.txt_SoTienChi.Size = new System.Drawing.Size(241, 22);
+            this.txt_SoTienChi.Size = new System.Drawing.Size(241, 30);
             this.txt_SoTienChi.TabIndex = 23;
             // 
             // txt_NoiDungChi
             // 
+            this.txt_NoiDungChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_NoiDungChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NoiDungChi.Location = new System.Drawing.Point(163, 104);
             this.txt_NoiDungChi.Name = "txt_NoiDungChi";
-            this.txt_NoiDungChi.Size = new System.Drawing.Size(241, 22);
+            this.txt_NoiDungChi.Size = new System.Drawing.Size(241, 30);
             this.txt_NoiDungChi.TabIndex = 22;
             // 
             // txt_NgayChi
             // 
+            this.txt_NgayChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_NgayChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NgayChi.Location = new System.Drawing.Point(163, 279);
             this.txt_NgayChi.Name = "txt_NgayChi";
-            this.txt_NgayChi.Size = new System.Drawing.Size(241, 22);
+            this.txt_NgayChi.Size = new System.Drawing.Size(241, 30);
             this.txt_NgayChi.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 201);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(136, 25);
             this.label4.TabIndex = 19;
             this.label4.Text = "Số Tiền Chi:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 104);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 18;
             this.label3.Text = "Nội Dung Chi:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 279);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 279);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 16;
             this.label1.Text = "Ngày Chi:";
             // 
@@ -155,7 +176,7 @@
             this.LV_Data.GridLines = true;
             this.LV_Data.HideSelection = false;
             this.LV_Data.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.LV_Data.Location = new System.Drawing.Point(0, 0);
             this.LV_Data.Margin = new System.Windows.Forms.Padding(4);
             this.LV_Data.Name = "LV_Data";
@@ -167,6 +188,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.LV_Data);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -177,6 +199,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btn_Load);
             this.panel3.Controls.Add(this.cbb_Vi);
             this.panel3.Controls.Add(this.label5);
@@ -188,28 +211,34 @@
             // 
             // btn_Load
             // 
-            this.btn_Load.Location = new System.Drawing.Point(365, 15);
+            this.btn_Load.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Load.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Load.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Load.ForeColor = System.Drawing.Color.White;
+            this.btn_Load.Location = new System.Drawing.Point(391, 16);
             this.btn_Load.Name = "btn_Load";
-            this.btn_Load.Size = new System.Drawing.Size(66, 43);
+            this.btn_Load.Size = new System.Drawing.Size(103, 43);
             this.btn_Load.TabIndex = 2;
             this.btn_Load.Text = "Load";
-            this.btn_Load.UseVisualStyleBackColor = true;
+            this.btn_Load.UseVisualStyleBackColor = false;
             this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
             // 
             // cbb_Vi
             // 
+            this.cbb_Vi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Vi.FormattingEnabled = true;
-            this.cbb_Vi.Location = new System.Drawing.Point(113, 22);
+            this.cbb_Vi.Location = new System.Drawing.Point(116, 22);
             this.cbb_Vi.Name = "cbb_Vi";
-            this.cbb_Vi.Size = new System.Drawing.Size(232, 24);
+            this.cbb_Vi.Size = new System.Drawing.Size(269, 30);
             this.cbb_Vi.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 28);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Chọn ví ";
             // 
@@ -217,11 +246,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Spending_manager_app.Properties.Resources.Thiết_kế_chưa_có_tên__3_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(942, 609);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Frm_DSChiTien";
-            this.Text = "Frm_DSChiTien";
+            this.ShowIcon = false;
+            this.Text = "Chi tiền";
             this.Load += new System.EventHandler(this.Frm_DSChiTien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
