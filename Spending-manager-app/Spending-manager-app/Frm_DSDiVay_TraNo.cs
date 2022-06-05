@@ -17,6 +17,7 @@ namespace Spending_manager_app
             InitializeComponent();
         }
         public int vi = -1;
+        
         private void Frm_DSDiVay_TraNo_Load(object sender, EventArgs e)
         {
             InitListView(LV_Data);
@@ -94,12 +95,11 @@ namespace Spending_manager_app
             ListViewItem.ListViewSubItem lvsi;
 
             LV.Items.Clear();
+            int x = 1;
             for (int i = 0; i < debts.Count; i++)
             {
-                if (debts[i].amount < 0)
-                    continue;
                 lvi = new ListViewItem();
-                lvi.Text = (i + 1).ToString();
+                lvi.Text = (x++).ToString();
 
                 lvi.ForeColor = Color.DarkBlue;
                 lvi.BackColor = Color.White;
@@ -123,12 +123,14 @@ namespace Spending_manager_app
                 lvsi.Text = debts[i].amount.ToString();
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abc = new DateTime(debts[i].createdOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = debts[i].createdOn.ToString();
+                lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abd = new DateTime(debts[i].paymentedOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = debts[i].paymentedOn.ToString();
+                lvsi.Text = abd.ToString();
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();
@@ -145,7 +147,7 @@ namespace Spending_manager_app
 
         private void btn_Load_Click(object sender, EventArgs e)
         {
-            if (cbb_Vi.Text == "")
+            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---")
                 MessageBox.Show("Vui long chon vi");
             else
             {
@@ -158,8 +160,6 @@ namespace Spending_manager_app
                     {
                         vi = x;
                         x = wallets.Count;
-                        // MessageBox.Show(vi.ToString());
-
                     }
 
                     else
@@ -184,6 +184,8 @@ namespace Spending_manager_app
             txt_NgayVay.Text = LV_Data.SelectedItems[0].SubItems[5].Text;
             txt_NgayTra.Text = LV_Data.SelectedItems[0].SubItems[6].Text;
             cb_TraTien.Checked = bool.Parse(LV_Data.SelectedItems[0].SubItems[7].Text);
+            txt_STT.Text = LV_Data.SelectedItems[0].SubItems[0].Text;
+            txt_NguoiNhan.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
 
         }
 
@@ -197,7 +199,7 @@ namespace Spending_manager_app
             }
             if (txt_SoTien.Text == "")
             {
-                thongbao = thongbao + "Vui lòng nhập số tiền cho vay";
+                thongbao = thongbao + "\nVui lòng nhập số tiền cho vay";
 
             }
             if (thongbao == "")
@@ -226,17 +228,26 @@ namespace Spending_manager_app
             }
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btn_Apply_Click(object sender, EventArgs e)
+        #endregion
+
+        #region [ TraNo ]
+        private void btn_Tra_Click(object sender, EventArgs e)
         {
+            List<Wallet> wallets = AppPlatform.API.GetWallets();
+            Wallet wallet = wallets[vi];
+            List<Debt> debts = wallet.GetDebts();
+            int trano;
+            trano = int.Parse(txt_STT.Text);
+            Debt debt = debts[trano-1];
+            wallet.PayDebt(debt);
+
+            wallet.Load();
+            List<Debt> debtss = wallet.GetDebts();
+            LoadDataToListView(debtss);
 
         }
         #endregion
-
-
     }
 }

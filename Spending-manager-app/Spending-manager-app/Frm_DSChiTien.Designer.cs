@@ -28,37 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("12323");
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Apply = new System.Windows.Forms.Button();
+            this.txt_NgayChi = new System.Windows.Forms.TextBox();
             this.btn_Create = new System.Windows.Forms.Button();
             this.txt_SoTienChi = new System.Windows.Forms.TextBox();
             this.txt_NoiDungChi = new System.Windows.Forms.TextBox();
-            this.txt_NgayChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LV_Data = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Load = new System.Windows.Forms.Button();
             this.cbb_Vi = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.LV_Data = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Apply);
+            this.panel1.Controls.Add(this.txt_NgayChi);
             this.panel1.Controls.Add(this.btn_Create);
             this.panel1.Controls.Add(this.txt_SoTienChi);
             this.panel1.Controls.Add(this.txt_NoiDungChi);
-            this.panel1.Controls.Add(this.txt_NgayChi);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -68,33 +65,14 @@
             this.panel1.Size = new System.Drawing.Size(442, 609);
             this.panel1.TabIndex = 14;
             // 
-            // btn_Delete
+            // txt_NgayChi
             // 
-            this.btn_Delete.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(298, 416);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(117, 98);
-            this.btn_Delete.TabIndex = 26;
-            this.btn_Delete.Text = "Xóa";
-            this.btn_Delete.UseVisualStyleBackColor = false;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
-            // btn_Apply
-            // 
-            this.btn_Apply.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Apply.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Apply.ForeColor = System.Drawing.Color.White;
-            this.btn_Apply.Location = new System.Drawing.Point(162, 416);
-            this.btn_Apply.Name = "btn_Apply";
-            this.btn_Apply.Size = new System.Drawing.Size(119, 98);
-            this.btn_Apply.TabIndex = 25;
-            this.btn_Apply.Text = "Cập Nhật";
-            this.btn_Apply.UseVisualStyleBackColor = false;
-            this.btn_Apply.Click += new System.EventHandler(this.btn_Apply_Click);
+            this.txt_NgayChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_NgayChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NgayChi.Location = new System.Drawing.Point(174, 294);
+            this.txt_NgayChi.Name = "txt_NgayChi";
+            this.txt_NgayChi.Size = new System.Drawing.Size(241, 30);
+            this.txt_NgayChi.TabIndex = 25;
             // 
             // btn_Create
             // 
@@ -102,11 +80,11 @@
             this.btn_Create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Create.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Create.ForeColor = System.Drawing.Color.White;
-            this.btn_Create.Location = new System.Drawing.Point(21, 416);
+            this.btn_Create.Location = new System.Drawing.Point(115, 415);
             this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(112, 98);
+            this.btn_Create.Size = new System.Drawing.Size(221, 98);
             this.btn_Create.TabIndex = 24;
-            this.btn_Create.Text = "Tạo Mới";
+            this.btn_Create.Text = "Thêm Phiếu Chi";
             this.btn_Create.UseVisualStyleBackColor = false;
             this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
@@ -114,7 +92,7 @@
             // 
             this.txt_SoTienChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_SoTienChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SoTienChi.Location = new System.Drawing.Point(163, 195);
+            this.txt_SoTienChi.Location = new System.Drawing.Point(174, 210);
             this.txt_SoTienChi.Name = "txt_SoTienChi";
             this.txt_SoTienChi.Size = new System.Drawing.Size(241, 30);
             this.txt_SoTienChi.TabIndex = 23;
@@ -123,25 +101,16 @@
             // 
             this.txt_NoiDungChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_NoiDungChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NoiDungChi.Location = new System.Drawing.Point(163, 104);
+            this.txt_NoiDungChi.Location = new System.Drawing.Point(174, 119);
             this.txt_NoiDungChi.Name = "txt_NoiDungChi";
             this.txt_NoiDungChi.Size = new System.Drawing.Size(241, 30);
             this.txt_NoiDungChi.TabIndex = 22;
-            // 
-            // txt_NgayChi
-            // 
-            this.txt_NgayChi.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_NgayChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NgayChi.Location = new System.Drawing.Point(163, 279);
-            this.txt_NgayChi.Name = "txt_NgayChi";
-            this.txt_NgayChi.Size = new System.Drawing.Size(241, 30);
-            this.txt_NgayChi.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 201);
+            this.label4.Location = new System.Drawing.Point(25, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 25);
             this.label4.TabIndex = 19;
@@ -151,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 104);
+            this.label3.Location = new System.Drawing.Point(5, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 18;
@@ -161,36 +130,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 279);
+            this.label1.Location = new System.Drawing.Point(48, 294);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 16;
             this.label1.Text = "Ngày Chi:";
             // 
-            // LV_Data
-            // 
-            this.LV_Data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LV_Data.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LV_Data.ForeColor = System.Drawing.Color.Navy;
-            this.LV_Data.FullRowSelect = true;
-            this.LV_Data.GridLines = true;
-            this.LV_Data.HideSelection = false;
-            this.LV_Data.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
-            this.LV_Data.Location = new System.Drawing.Point(0, 0);
-            this.LV_Data.Margin = new System.Windows.Forms.Padding(4);
-            this.LV_Data.Name = "LV_Data";
-            this.LV_Data.Size = new System.Drawing.Size(500, 609);
-            this.LV_Data.TabIndex = 13;
-            this.LV_Data.UseCompatibleStateImageBehavior = false;
-            this.LV_Data.View = System.Windows.Forms.View.Details;
-            this.LV_Data.ItemActivate += new System.EventHandler(this.LV_Data_ItemActivate);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.LV_Data);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -200,13 +149,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.btn_Load);
             this.panel3.Controls.Add(this.cbb_Vi);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(500, 76);
+            this.panel3.Size = new System.Drawing.Size(500, 609);
             this.panel3.TabIndex = 14;
             // 
             // btn_Load
@@ -229,8 +179,9 @@
             this.cbb_Vi.FormattingEnabled = true;
             this.cbb_Vi.Location = new System.Drawing.Point(116, 22);
             this.cbb_Vi.Name = "cbb_Vi";
-            this.cbb_Vi.Size = new System.Drawing.Size(269, 30);
+            this.cbb_Vi.Size = new System.Drawing.Size(260, 30);
             this.cbb_Vi.TabIndex = 1;
+            this.cbb_Vi.Text = "  ---Nhấp Để Chọn---";
             // 
             // label5
             // 
@@ -241,6 +192,32 @@
             this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Chọn ví ";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.LV_Data);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 93);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(500, 516);
+            this.panel4.TabIndex = 3;
+            // 
+            // LV_Data
+            // 
+            this.LV_Data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LV_Data.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LV_Data.ForeColor = System.Drawing.Color.Navy;
+            this.LV_Data.FullRowSelect = true;
+            this.LV_Data.GridLines = true;
+            this.LV_Data.HideSelection = false;
+            this.LV_Data.Location = new System.Drawing.Point(0, 0);
+            this.LV_Data.Margin = new System.Windows.Forms.Padding(4);
+            this.LV_Data.Name = "LV_Data";
+            this.LV_Data.Size = new System.Drawing.Size(500, 516);
+            this.LV_Data.TabIndex = 12;
+            this.LV_Data.UseCompatibleStateImageBehavior = false;
+            this.LV_Data.View = System.Windows.Forms.View.Details;
+            this.LV_Data.ItemActivate += new System.EventHandler(this.LV_Data_ItemActivate);
             // 
             // Frm_DSChiTien
             // 
@@ -255,13 +232,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Frm_DSChiTien";
             this.ShowIcon = false;
-            this.Text = "Chi tiền";
+            this.Text = "Danh Sách Chi tiền";
             this.Load += new System.EventHandler(this.Frm_DSChiTien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,20 +247,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_Apply;
         private System.Windows.Forms.Button btn_Create;
         private System.Windows.Forms.TextBox txt_SoTienChi;
         private System.Windows.Forms.TextBox txt_NoiDungChi;
-        private System.Windows.Forms.TextBox txt_NgayChi;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView LV_Data;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbb_Vi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Load;
+        private System.Windows.Forms.TextBox txt_NgayChi;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ListView LV_Data;
     }
 }

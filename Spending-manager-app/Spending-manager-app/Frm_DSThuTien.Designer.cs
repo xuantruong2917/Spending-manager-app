@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Apply = new System.Windows.Forms.Button();
             this.btn_Create = new System.Windows.Forms.Button();
             this.txt_SoTienThu = new System.Windows.Forms.TextBox();
             this.txt_NoiDungThu = new System.Windows.Forms.TextBox();
@@ -52,8 +50,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Apply);
             this.panel1.Controls.Add(this.btn_Create);
             this.panel1.Controls.Add(this.txt_SoTienThu);
             this.panel1.Controls.Add(this.txt_NoiDungThu);
@@ -67,41 +63,13 @@
             this.panel1.Size = new System.Drawing.Size(450, 545);
             this.panel1.TabIndex = 12;
             // 
-            // btn_Delete
-            // 
-            this.btn_Delete.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(311, 364);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(130, 45);
-            this.btn_Delete.TabIndex = 26;
-            this.btn_Delete.Text = "Xóa";
-            this.btn_Delete.UseVisualStyleBackColor = false;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
-            // btn_Apply
-            // 
-            this.btn_Apply.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Apply.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Apply.ForeColor = System.Drawing.Color.White;
-            this.btn_Apply.Location = new System.Drawing.Point(172, 364);
-            this.btn_Apply.Name = "btn_Apply";
-            this.btn_Apply.Size = new System.Drawing.Size(132, 45);
-            this.btn_Apply.TabIndex = 25;
-            this.btn_Apply.Text = "Cập Nhật";
-            this.btn_Apply.UseVisualStyleBackColor = false;
-            this.btn_Apply.Click += new System.EventHandler(this.btn_Apply_Click);
-            // 
             // btn_Create
             // 
             this.btn_Create.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Create.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Create.ForeColor = System.Drawing.Color.White;
-            this.btn_Create.Location = new System.Drawing.Point(34, 364);
+            this.btn_Create.Location = new System.Drawing.Point(306, 354);
             this.btn_Create.Name = "btn_Create";
             this.btn_Create.Size = new System.Drawing.Size(125, 45);
             this.btn_Create.TabIndex = 24;
@@ -225,6 +193,7 @@
             this.cbb_Vi.Name = "cbb_Vi";
             this.cbb_Vi.Size = new System.Drawing.Size(232, 30);
             this.cbb_Vi.TabIndex = 4;
+            this.cbb_Vi.Text = "  ---Nhấp Để Chọn---";
             // 
             // label5
             // 
@@ -262,8 +231,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_Apply;
         private System.Windows.Forms.Button btn_Create;
         private System.Windows.Forms.TextBox txt_SoTienThu;
         private System.Windows.Forms.TextBox txt_NoiDungThu;

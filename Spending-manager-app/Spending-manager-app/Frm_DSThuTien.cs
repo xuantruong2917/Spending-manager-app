@@ -32,9 +32,7 @@ namespace Spending_manager_app
             for (int i = 0; i < wallets.Count; i++)
             {
                 cbb_Vi.Items.Add(wallets[i].walletName.ToString());
-            }
-            
-            
+            }        
         }
 
         #region [ Design Layout ]
@@ -60,7 +58,7 @@ namespace Spending_manager_app
             LV.Columns.Add(colHead);
 
             colHead = new ColumnHeader();
-            colHead.Text = "Nội Dung";
+            colHead.Text = "Nội Dung Thu";
             colHead.Width = 100;
             colHead.TextAlign = HorizontalAlignment.Left;
             LV.Columns.Add(colHead);
@@ -83,12 +81,13 @@ namespace Spending_manager_app
             ListViewItem.ListViewSubItem lvsi;
 
             LV.Items.Clear();
+            int x = 1;
             for (int i = 0; i < transactions.Count; i++)
             {
                 if (transactions[i].amount < 0)
                     continue;
                 lvi = new ListViewItem();
-                lvi.Text = (i + 1).ToString();
+                lvi.Text = (x ++).ToString();
 
                 lvi.ForeColor = Color.DarkBlue;
                 lvi.BackColor = Color.White;
@@ -107,8 +106,9 @@ namespace Spending_manager_app
                 lvsi.Text = transactions[i].info;
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abc = new DateTime(transactions[i].createdOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = transactions[i].createdOn.ToString();
+                lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
 
@@ -122,8 +122,9 @@ namespace Spending_manager_app
 
         private void btn_Load_Click(object sender, EventArgs e)
         {
-            if (cbb_Vi.Text == "")
+            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---")
                 MessageBox.Show("Vui long chon vi");
+
             else
             {
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
@@ -134,10 +135,7 @@ namespace Spending_manager_app
                     {
                         vi = x;
                         x = wallets.Count ;
-                        //MessageBox.Show("Thanh Cong");
-                        
-                    }
-                        
+                    }      
                     else
                         x++;
                 }
@@ -162,28 +160,26 @@ namespace Spending_manager_app
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
+           
+            string thongbao = "";
             if (txt_SoTienThu.Text == "")
-                MessageBox.Show("Vui lòng nhập số tiền thu");
+                thongbao = thongbao + "Vui lòng nhập số tiền thu";
+            if (double.Parse(txt_SoTienThu.Text) <= 0)
+                thongbao = thongbao + "\nVui lòng nhập lại số tiền thu";
+            if (thongbao != "")
+                MessageBox.Show(thongbao);
+            else
+            {
+                List<Wallet> wallets = AppPlatform.API.GetWallets();
+                Wallet wallet = wallets[vi];
 
-            List<Wallet> wallets = AppPlatform.API.GetWallets();
-            Wallet wallet = wallets[vi];
-            
-            wallet.Deposit(double.Parse(txt_SoTienThu.Text), txt_NoiDungThu.Text);
-                
-            //------------
-            wallet.Load();
-            List<Transaction> transactions = wallet.GetTransactions();
-            LoadDataToListView(transactions);
-        }
+                wallet.Deposit(double.Parse(txt_SoTienThu.Text), txt_NoiDungThu.Text);
 
-        private void btn_Apply_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
+                //------------
+                wallet.Load();
+                List<Transaction> transactions = wallet.GetTransactions();
+                LoadDataToListView(transactions);
+            }
         }
         #endregion
 

@@ -17,29 +17,38 @@ namespace Spending_manager_app
             InitializeComponent();
         }
 
+        private void Frm_Menu_Load(object sender, EventArgs e)
+        {
+            Account account = AppPlatform.API.GetAccountInfo();
+            lbl_Name.Text = account.fullname;
+            List<Wallet> wallets = AppPlatform.API.GetWallets();
+             if(wallets.Count > 0)
+            {
+                btn_ChonVi.Visible = false;
+            }    
+
+        }
+
+
+
+        #region [Chu Nang]
+
         private void btn_TraCuuSoDu_Click(object sender, EventArgs e)
         {
             Frm_TraCuuSoDu_ChuyenTienGiuaCacVi frm = new Frm_TraCuuSoDu_ChuyenTienGiuaCacVi();
-            frm.table = 1;
+            frm.table = 0;
             frm.Text = "";
             frm.ShowDialog();
-            
+
         }
 
-        private void btn_ChucNang_Click(object sender, EventArgs e)
+        private void btn_ThemVi_Click(object sender, EventArgs e)
         {
-            
-            btn_ChuyenTienGiuaCacVi.Visible = true;
-            btn_DSChiTien.Visible = true;
-            btn_DSChoVay.Visible = true;
-            btn_DSDiVay.Visible = true; 
-            btn_DSThuTien.Visible = true;
-            btn_ThemVi.Visible = true;
-            btn_TraCuuSoDu.Visible = true;
-
+            Frm_ChonVi frm = new Frm_ChonVi();
+            frm.table = 1;
+            frm.Show();
         }
 
-        #region [Chu Nang]
         private void btn_ChuyenTienGiuaCacVi_Click(object sender, EventArgs e)
         {
             Frm_TraCuuSoDu_ChuyenTienGiuaCacVi frm = new Frm_TraCuuSoDu_ChuyenTienGiuaCacVi();
@@ -75,29 +84,64 @@ namespace Spending_manager_app
 
         #endregion
 
+        #region [ Thanh Chinh ]
         private void btn_ChonVi_Click(object sender, EventArgs e)
         {
             Frm_ChonVi frm = new Frm_ChonVi();
            // this.Hide();
             frm.ShowDialog();
+            btn_ChonVi.Visible = false;
+            
+        }
+
+        private void btn_ChucNang_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            panel4.Visible = false;
+            
+          
             
         }
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            Frm_ThongTinCaNhan frm = new Frm_ThongTinCaNhan();
-            frm.ShowDialog();
+            panel2.Visible = true;
+            panel4.Visible = true;
+            //Frm_ThongTinCaNhan frm = new Frm_ThongTinCaNhan();
+            //frm.TopLevel = false;
+            //this.panel4.Controls.Add(frm);
+            //frm.Show();
+            getthongtin();
         }
 
-        private void Frm_Menu_Load(object sender, EventArgs e)
-        {
-            AppPlatform.API.GetAccountInfo();
-        }
+      
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        #endregion
+        #region [ thông tin ]
+        private void getthongtin()
+        {
+            Account account = AppPlatform.API.GetAccountInfo();
+            txt_FullName.Text = account.fullname;
+            txt_DiaChi.Text = account.address;
+            txt_SDT.Text = account.phone;
+            DateTime abc = new DateTime(account.createdOn);
+            txt_NgayDK.Text = abc.ToString("dd/MM/yyyy");
+        }
+
+        private void btn_Apply_Click(object sender, EventArgs e)
+        {
+            Account account = AppPlatform.API.GetAccountInfo();
+            account.ChangeInfo(txt_FullName.Text, txt_SDT.Text, txt_DiaChi.Text);
+        }
+
+        #endregion
+
+       
     }
 
 }

@@ -47,19 +47,19 @@ namespace Spending_manager_app
             LV.Columns.Add(colHead);
 
             colHead = new ColumnHeader();
-            colHead.Text = "Số Tiền Thu";
+            colHead.Text = "Số Tiền Chi";
             colHead.Width = 100;
             colHead.TextAlign = HorizontalAlignment.Left;
             LV.Columns.Add(colHead);
 
             colHead = new ColumnHeader();
-            colHead.Text = "Nội Dung";
+            colHead.Text = "Nội Dung Chi";
             colHead.Width = 100;
             colHead.TextAlign = HorizontalAlignment.Left;
             LV.Columns.Add(colHead);
 
             colHead = new ColumnHeader();
-            colHead.Text = "Thời Gian Thu";
+            colHead.Text = "Thời Gian Chi";
             colHead.Width = 100;
             colHead.TextAlign = HorizontalAlignment.Left;
             LV.Columns.Add(colHead);
@@ -76,12 +76,13 @@ namespace Spending_manager_app
             ListViewItem.ListViewSubItem lvsi;
 
             LV.Items.Clear();
+            int x = 1;
             for (int i = 0; i < transactions.Count; i++)
             {
                 if (transactions[i].amount > 0)
                     continue;
                 lvi = new ListViewItem();
-                lvi.Text = (i + 1).ToString();
+                lvi.Text = (x++).ToString();
 
                 lvi.ForeColor = Color.DarkBlue;
                 lvi.BackColor = Color.White;
@@ -93,15 +94,16 @@ namespace Spending_manager_app
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = transactions[i].amount.ToString();
+                lvsi.Text = (Math.Abs(transactions[i].amount)).ToString();
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();
                 lvsi.Text = transactions[i].info;
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abc = new DateTime(transactions[i].createdOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = transactions[i].createdOn.ToString();
+                lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
 
@@ -115,7 +117,7 @@ namespace Spending_manager_app
         private void btn_Load_Click(object sender, EventArgs e)
         {
 
-            if (cbb_Vi.Text == "")
+            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---")
                 MessageBox.Show("Vui long chon vi");
             else
             {
@@ -128,8 +130,6 @@ namespace Spending_manager_app
                     {
                         vi = x;
                         x = wallets.Count;
-                       // MessageBox.Show(vi.ToString());
-
                     }
 
                     else
@@ -151,35 +151,34 @@ namespace Spending_manager_app
             txt_SoTienChi.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
             txt_NoiDungChi.Text = LV_Data.SelectedItems[0].SubItems[3].Text;
             txt_NgayChi.Text = LV_Data.SelectedItems[0].SubItems[4].Text;
+            
         }
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
+            string thongbao = "";
             if (txt_SoTienChi.Text == "")
-                MessageBox.Show("Vui lòng nhập số tiền thu");
+                thongbao = thongbao + "Vui lòng nhập số tiền chi";
+            if (double.Parse(txt_SoTienChi.Text) <= 0)
+                thongbao = thongbao + "\nVui lòng nhập lại số tiền chi";
+          
+            if (thongbao != "")
+                MessageBox.Show(thongbao);
+            else 
+            {
+                List<Wallet> wallets = AppPlatform.API.GetWallets();
+                Wallet wallet = wallets[vi];
+                double a = double.Parse(txt_SoTienChi.Text);
+              /*  if (a > 0)
+                    a = a * -1;*/
+                wallet.Withdraw(a, txt_NoiDungChi.Text);
 
-            List<Wallet> wallets = AppPlatform.API.GetWallets();
-            Wallet wallet = wallets[vi];
-
-            wallet.Withdraw(double.Parse(txt_SoTienChi.Text), txt_NoiDungChi.Text);
-
-            //------------
-            wallet.Load();
-            List<Transaction> transactions = wallet.GetTransactions();
-            LoadDataToListView(transactions);
+                //------------
+                wallet.Load();
+                List<Transaction> transactions = wallet.GetTransactions();
+                LoadDataToListView(transactions);
+            }
         }
-
-        private void btn_Apply_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         #endregion
 

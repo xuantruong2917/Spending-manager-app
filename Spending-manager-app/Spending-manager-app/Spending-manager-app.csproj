@@ -227,7 +227,7 @@
     <EmbeddedResource Include="Frm_ThongTinCaNhan.resx">
       <DependentUpon>Frm_ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TraCuuSoDu.resx">
+    <EmbeddedResource Include="Frm_TraCuuSoDu_ChuyenTienGiuaCacVi.resx">
       <DependentUpon>Frm_TraCuuSoDu_ChuyenTienGiuaCacVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

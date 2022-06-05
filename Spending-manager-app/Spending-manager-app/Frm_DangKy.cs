@@ -64,6 +64,7 @@ namespace Spending_manager_app
 
             string message = AppPlatform.API.SignUp(this.username.Text, this.password.Text, this.fullname.Text, this.phone.Text, this.address.Text);
             MessageBox.Show(message, "Thông báo");
+            this.Close();
         }
 
         

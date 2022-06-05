@@ -94,12 +94,11 @@ namespace Spending_manager_app
             ListViewItem.ListViewSubItem lvsi;
 
             LV.Items.Clear();
+            int x = 1;
             for (int i = 0; i < loans.Count; i++)
             {
-                if (loans[i].amount < 0)
-                    continue;
                 lvi = new ListViewItem();
-                lvi.Text = (i + 1).ToString();
+                lvi.Text = (x++).ToString();
 
                 lvi.ForeColor = Color.DarkBlue;
                 lvi.BackColor = Color.White;
@@ -120,15 +119,17 @@ namespace Spending_manager_app
 
 
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = loans[i].amount.ToString();
+                lvsi.Text = Math.Abs(loans[i].amount).ToString();
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abd = new DateTime(loans[i].createdOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = loans[i].createdOn.ToString();
+                lvsi.Text = abd.ToString();
                 lvi.SubItems.Add(lvsi);
 
+                DateTime abc = new DateTime(loans[i].paymentedOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = loans[i].paymentedOn.ToString();
+                lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();
@@ -145,7 +146,7 @@ namespace Spending_manager_app
 
         private void btn_Load_Click(object sender, EventArgs e)
         {
-            if (cbb_Vi.Text == "")
+            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---")
                 MessageBox.Show("Vui long chon vi");
             else
             {
@@ -178,12 +179,14 @@ namespace Spending_manager_app
         private void LV_Data_ItemActivate(object sender, EventArgs e)
         {
             txt_NguoiVay.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
-            txt_NgayChoVay.Text = LV_Data.SelectedItems[0].SubItems[3].Text;
-            txt_NoiDung.Text = LV_Data.SelectedItems[0].SubItems[4].Text;
-            txt_Sotien.Text = LV_Data.SelectedItems[0].SubItems[5].Text;
+            txt_NgayChoVay.Text = LV_Data.SelectedItems[0].SubItems[5].Text;
+            txt_NoiDung.Text = LV_Data.SelectedItems[0].SubItems[3].Text;
+            txt_Sotien.Text = LV_Data.SelectedItems[0].SubItems[4].Text;
             txt_NgayTra.Text = LV_Data.SelectedItems[0].SubItems[6].Text;
             cb_TraTien.Checked = bool.Parse(LV_Data.SelectedItems[0].SubItems[7].Text);
-          
+            txt_STT.Text = LV_Data.SelectedItems[0].SubItems[0].Text;
+            txt_NguoiTra.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
+
         }
 
         bool check ()
@@ -214,8 +217,10 @@ namespace Spending_manager_app
             {
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
                 Wallet wallet = wallets[vi];
-
-                wallet.CreateLoan(double.Parse(txt_Sotien.Text), txt_NguoiVay.Text,txt_NoiDung.Text);
+                double a = double.Parse(txt_Sotien.Text);
+                /*if (a > 0)
+                    a = a * -1;*/
+                wallet.CreateLoan(a, txt_NguoiVay.Text,txt_NoiDung.Text);
 
                 //------------
                 wallet.Load();
@@ -224,21 +229,28 @@ namespace Spending_manager_app
             }
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btn_Apply_Click(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         #region [ ThuNo ]
+        private void btn_ThuNo_Click(object sender, EventArgs e)
+        {
 
+            List<Wallet> wallets = AppPlatform.API.GetWallets();
+            Wallet wallet = wallets[0];
+            List<Loan> loans = wallet.GetLoans();
+            int thuno;
+            thuno = int.Parse(txt_STT.Text);
+            Loan loan = loans[thuno-1];
+            wallet.PayLoan(loan);
+
+            wallet.Load();
+            List<Loan> loanss = wallet.GetLoans();
+            LoadDataToListView(loanss);
+
+        }
         #endregion
 
-        
+
     }
 }
