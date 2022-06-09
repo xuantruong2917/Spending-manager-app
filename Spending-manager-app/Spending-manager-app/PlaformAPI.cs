@@ -214,8 +214,8 @@ namespace Spending_manager_app
 
     public class AppAPI
     {
-        public string url = "http://localhost:5000";
-        //public string url =  "https://spendingmanager.up.railway.app/";
+        //public string url = "http://localhost:5000";
+        public string url =  "https://spendingmanager.up.railway.app/";
         public string token = "";
         public bool isLogin = false;
         public bool firstLogin = true;
