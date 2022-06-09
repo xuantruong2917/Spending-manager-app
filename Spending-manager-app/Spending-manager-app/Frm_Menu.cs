@@ -19,7 +19,12 @@ namespace Spending_manager_app
 
         private void Frm_Menu_Load(object sender, EventArgs e)
         {
+
             Account account = AppPlatform.API.GetAccountInfo();
+
+            this.Focus();
+            this.BringToFront(); 
+
             lbl_Name.Text = account.fullname;
             List<Wallet> wallets = AppPlatform.API.GetWallets();
              if(wallets.Count > 0)

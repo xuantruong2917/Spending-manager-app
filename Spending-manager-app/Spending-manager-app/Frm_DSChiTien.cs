@@ -156,6 +156,8 @@ namespace Spending_manager_app
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
+            if (vi == -1) return;
+
             string thongbao = "";
             if (txt_SoTienChi.Text == "")
                 thongbao = thongbao + "Vui lòng nhập số tiền chi";
@@ -171,7 +173,7 @@ namespace Spending_manager_app
                 double a = double.Parse(txt_SoTienChi.Text);
               /*  if (a > 0)
                     a = a * -1;*/
-                wallet.Withdraw(a, txt_NoiDungChi.Text);
+                wallet.Withdraw(a, txt_NoiDungChi.Text, this.txt_NgayChi.Value);
 
                 //------------
                 wallet.Load();

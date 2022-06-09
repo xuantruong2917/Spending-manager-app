@@ -61,45 +61,56 @@ namespace Spending_manager_app
         }
 
         // Thu
-        public void Deposit(double amount, string info)
+        public void Deposit(double amount, string info, DateTime? createdOn = null)
         {
-            var result = AppPlatform.API.POSTData("wallet/deposit", new { walletId = this.id, amount = amount, info = info });
+            if (!createdOn.HasValue)
+                createdOn = DateTime.Now;
+
+            var result = AppPlatform.API.POSTData("wallet/deposit", new { walletId = this.id, amount = amount, info = info, createdOn = createdOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
         }
 
         // Chi
-        public void Withdraw(double amount, string info)
+        public void Withdraw(double amount, string info, DateTime? createdOn = null)
         {
-            var result = AppPlatform.API.POSTData("wallet/withdraw", new { walletId = this.id, amount = amount, info = info });
+            if (!createdOn.HasValue)
+                createdOn = DateTime.Now;
+            var result = AppPlatform.API.POSTData("wallet/withdraw", new { walletId = this.id, amount = amount, info = info, createdOn = createdOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
         }
 
-        public void Transfer(double amount, Wallet walletRecive)
+        public void Transfer(double amount, Wallet walletRecive, DateTime? createdOn = null)
         {
+            if (!createdOn.HasValue)
+                createdOn = DateTime.Now;
             string info = $"Giao dịch chuyển {AppPlatform.MoneyFormat(amount)} từ Ví {this.walletName} sang Ví {walletRecive.walletName}";
-            this.Withdraw(amount, info);
-            walletRecive.Deposit(amount, info);
+            this.Withdraw(amount, info, createdOn);
+            walletRecive.Deposit(amount, info, createdOn);
             this.Load();
             walletRecive.Load();
         }
 
         //Tạo giao dịch cho vay
-        public void CreateLoan(double amount, string debtor, string info)
+        public void CreateLoan(double amount, string debtor, string info, DateTime? createdOn = null)
         {
-            var result = AppPlatform.API.POSTData("wallet/createloan", new { walletId = this.id, amount = amount, debtor = debtor, info = info });
+            if (!createdOn.HasValue)
+                createdOn = DateTime.Now;
+            var result = AppPlatform.API.POSTData("wallet/createloan", new { walletId = this.id, amount = amount, debtor = debtor, info = info, createdOn = createdOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
         }
 
         //Tạo giao dịch vay
-        public void CreateDebt(double amount, string lender, string info)
+        public void CreateDebt(double amount, string lender, string info, DateTime? createdOn = null)
         {
-            var result = AppPlatform.API.POSTData("wallet/createdebt", new { walletId = this.id, amount = amount, lender = lender, info = info });
+            if (!createdOn.HasValue)
+                createdOn = DateTime.Now;
+            var result = AppPlatform.API.POSTData("wallet/createdebt", new { walletId = this.id, amount = amount, lender = lender, info = info, createdOn = createdOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
@@ -120,7 +131,7 @@ namespace Spending_manager_app
 
 
         //Thu Nợ
-        public void PayLoan(Loan loan)
+        public void PayLoan(Loan loan, DateTime? paymentedOn = null)
         {
             if (loan.isPaymented)
             {
@@ -128,21 +139,27 @@ namespace Spending_manager_app
                 return;
             }
 
-            var result = AppPlatform.API.POSTData("wallet/payloan", new { walletId = this.id, loanId = loan.id});
+            if (!paymentedOn.HasValue)
+                paymentedOn = DateTime.Now;
+
+            var result = AppPlatform.API.POSTData("wallet/payloan", new { walletId = this.id, loanId = loan.id, paymentedOn = paymentedOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
         }
         // Trả Nợ
-        public void PayDebt(Debt debt)
+        public void PayDebt(Debt debt, DateTime? paymentedOn = null)
         {
             if (debt.isPaymented)
             {
                 MessageBox.Show("Khoảng vay này đang ở trạng thái ĐÃ TRẢ", "Thông báo");
                 return;
-            }
+            } 
 
-            var result = AppPlatform.API.POSTData("wallet/paydebt", new { walletId = this.id, debtId = debt.id});
+            if (!paymentedOn.HasValue)
+                paymentedOn = DateTime.Now;
+
+            var result = AppPlatform.API.POSTData("wallet/paydebt", new { walletId = this.id, debtId = debt.id, paymentedOn = paymentedOn });
             dynamic response = AppPlatform.JSONParse<Object>(result.Content);
             MessageBox.Show(response.message.ToString(), "Thông Báo");
             this.Load();
@@ -197,7 +214,8 @@ namespace Spending_manager_app
 
     public class AppAPI
     {
-        public string url = "https://spendingmanager.up.railway.app/";
+        public string url = "http://localhost:5000";
+        //public string url =  "https://spendingmanager.up.railway.app/";
         public string token = "";
         public bool isLogin = false;
         public bool firstLogin = true;
@@ -207,7 +225,7 @@ namespace Spending_manager_app
         public Response POSTData(string path, object body)
         {   
 
-            if (this.token == "")
+            if (!this.isLogin)
             {
                 if (!this.firstLogin)
                     MessageBox.Show("Vui lòng đăng nhập trước khi sử dụng tính năng", "Thông Báo");
@@ -217,6 +235,16 @@ namespace Spending_manager_app
 
                 Frm_Login loginForm = new Frm_Login();
                 loginForm.ShowDialog();
+
+
+
+                if (loginForm.close)
+                {
+                    if (MessageBox.Show("Bạn có chắc là muốn thoát chương trình không?", "Thông báo",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Application.Exit();
+                    }
+                }
             }
 
             return PostRequest(path, body);
@@ -260,6 +288,9 @@ namespace Spending_manager_app
                 return tryAgain;
             }
         }
+        
+
+
 
         public bool Login(string user, string password)
         {

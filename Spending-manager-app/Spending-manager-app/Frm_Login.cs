@@ -12,6 +12,7 @@ namespace Spending_manager_app
 {
     public partial class Frm_Login : Form
     {
+        public bool close = true;
         public Frm_Login()
         {
             InitializeComponent();
@@ -44,15 +45,10 @@ namespace Spending_manager_app
             else
             {
                 //MessageBox.Show("Đăng nhập thành công", "Thông Báo");
+                this.close = false;
                 this.Close();
             }
         }
 
-        private void Frm_Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

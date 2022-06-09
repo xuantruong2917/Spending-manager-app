@@ -126,13 +126,13 @@
     <value>Times New Roman, 13.8pt, style=Bold</value>
   </data>
   <data name="btn_Sign_in.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 447</value>
+    <value>131, 363</value>
   </data>
   <data name="btn_Sign_in.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btn_Sign_in.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 40</value>
+    <value>138, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_Sign_in.TabIndex" type="System.Int32, mscorlib">
@@ -160,13 +160,13 @@
     <value>Times New Roman, 13.8pt, style=Bold</value>
   </data>
   <data name="btn_Login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 387</value>
+    <value>131, 314</value>
   </data>
   <data name="btn_Login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btn_Login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 42</value>
+    <value>138, 34</value>
   </data>
   <data name="btn_Login.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -190,13 +190,13 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 274</value>
+    <value>102, 223</value>
   </data>
   <data name="username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 23</value>
+    <value>196, 19</value>
   </data>
   <data name="username.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -217,16 +217,16 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 327</value>
+    <value>102, 266</value>
   </data>
   <data name="password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="password.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>●</value>
   </data>
   <data name="password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 23</value>
+    <value>196, 19</value>
   </data>
   <data name="password.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -247,16 +247,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>533, 523</value>
+    <value>400, 425</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -173,7 +173,7 @@ namespace Spending_manager_app
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
                 Wallet wallet = wallets[vi];
 
-                wallet.Deposit(double.Parse(txt_SoTienThu.Text), txt_NoiDungThu.Text);
+                wallet.Deposit(double.Parse(txt_SoTienThu.Text), txt_NoiDungThu.Text, this.txt_NgayThu.Value);
 
                 //------------
                 wallet.Load();

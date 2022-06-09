@@ -19,7 +19,6 @@ H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\bi
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\bin\Debug\Spending-manager-app.pdb
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.AssemblyReference.cache
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending-manager-app.csproj.SuggestedBindingRedirects.cache
-H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Form1.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_ChonVi.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DangKy.resources
 H:\Learning\C#\Spending-manager-app\Spending-manager-app\Spending-manager-app\obj\Debug\Spending_manager_app.Frm_DSChiTien.resources
