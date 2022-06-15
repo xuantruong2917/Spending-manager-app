@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txt_STT = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.txt_SoTien = new System.Windows.Forms.TextBox();
             this.txt_NgayTra = new System.Windows.Forms.TextBox();
             this.txt_NguoiChoVay = new System.Windows.Forms.TextBox();
-            this.txt_NgayVay = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.LV_Data = new System.Windows.Forms.ListView();
+            this.txt_NgayVay = new System.Windows.Forms.DateTimePicker();
+            this.txt_NgayTraNo = new System.Windows.Forms.DateTimePicker();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,15 +79,6 @@
             this.txt_STT.Name = "txt_STT";
             this.txt_STT.Size = new System.Drawing.Size(296, 30);
             this.txt_STT.TabIndex = 17;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(211, 75);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(296, 30);
-            this.textBox5.TabIndex = 15;
             // 
             // label10
             // 
@@ -187,9 +178,9 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.txt_NgayTraNo);
             this.panel5.Controls.Add(this.txt_STT);
             this.panel5.Controls.Add(this.txt_NguoiNhan);
-            this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label8);
@@ -249,15 +240,6 @@
             this.txt_NguoiChoVay.Size = new System.Drawing.Size(296, 30);
             this.txt_NguoiChoVay.TabIndex = 5;
             // 
-            // txt_NgayVay
-            // 
-            this.txt_NgayVay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NgayVay.Location = new System.Drawing.Point(211, 72);
-            this.txt_NgayVay.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_NgayVay.Name = "txt_NgayVay";
-            this.txt_NgayVay.Size = new System.Drawing.Size(296, 30);
-            this.txt_NgayVay.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -305,6 +287,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.txt_NgayVay);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.cb_TraTien);
             this.panel3.Controls.Add(this.txt_NoiDung);
@@ -315,7 +298,6 @@
             this.panel3.Controls.Add(this.txt_SoTien);
             this.panel3.Controls.Add(this.txt_NgayTra);
             this.panel3.Controls.Add(this.txt_NguoiChoVay);
-            this.panel3.Controls.Add(this.txt_NgayVay);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
@@ -470,6 +452,32 @@
             this.LV_Data.View = System.Windows.Forms.View.Details;
             this.LV_Data.ItemActivate += new System.EventHandler(this.LV_Data_ItemActivate);
             // 
+            // txt_NgayVay
+            // 
+            this.txt_NgayVay.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_NgayVay.CustomFormat = "HH:MM - dd/MM/yyyy";
+            this.txt_NgayVay.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NgayVay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_NgayVay.Location = new System.Drawing.Point(211, 70);
+            this.txt_NgayVay.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NgayVay.Name = "txt_NgayVay";
+            this.txt_NgayVay.Size = new System.Drawing.Size(293, 30);
+            this.txt_NgayVay.TabIndex = 28;
+            this.txt_NgayVay.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
+            // 
+            // txt_NgayTraNo
+            // 
+            this.txt_NgayTraNo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_NgayTraNo.CustomFormat = "HH:MM - dd/MM/yyyy";
+            this.txt_NgayTraNo.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NgayTraNo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_NgayTraNo.Location = new System.Drawing.Point(211, 72);
+            this.txt_NgayTraNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NgayTraNo.Name = "txt_NgayTraNo";
+            this.txt_NgayTraNo.Size = new System.Drawing.Size(293, 30);
+            this.txt_NgayTraNo.TabIndex = 28;
+            this.txt_NgayTraNo.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
+            // 
             // Frm_DSDiVay_TraNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -506,7 +514,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txt_STT;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -521,7 +528,6 @@
         private System.Windows.Forms.TextBox txt_SoTien;
         private System.Windows.Forms.TextBox txt_NgayTra;
         private System.Windows.Forms.TextBox txt_NguoiChoVay;
-        private System.Windows.Forms.TextBox txt_NgayVay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -539,5 +545,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox cb_TraTien;
+        private System.Windows.Forms.DateTimePicker txt_NgayTraNo;
+        private System.Windows.Forms.DateTimePicker txt_NgayVay;
     }
 }

@@ -22,7 +22,6 @@ namespace Spending_manager_app
             InitListView(LV_Data);
 
             List<Wallet> wallets = AppPlatform.API.GetWallets();
-            //cbb_Vi.Text = wallets.Count.ToString();
             for (int i = 0; i < wallets.Count; i++)
             {
                 cbb_Vi.Items.Add(wallets[i].walletName.ToString());
@@ -159,10 +158,7 @@ namespace Spending_manager_app
                     {
                         vi = x;
                         x = wallets.Count;
-                        // MessageBox.Show(vi.ToString());
-
                     }
-
                     else
                         x++;
                 }
@@ -182,7 +178,10 @@ namespace Spending_manager_app
             txt_NgayChoVay.Text = LV_Data.SelectedItems[0].SubItems[5].Text;
             txt_NoiDung.Text = LV_Data.SelectedItems[0].SubItems[3].Text;
             txt_Sotien.Text = LV_Data.SelectedItems[0].SubItems[4].Text;
+           
             txt_NgayTra.Text = LV_Data.SelectedItems[0].SubItems[6].Text;
+            if (LV_Data.SelectedItems[0].SubItems[6].Text == "1/1/0001 12:00:00 AM")
+                txt_NgayTra.Text = "";
             cb_TraTien.Checked = bool.Parse(LV_Data.SelectedItems[0].SubItems[7].Text);
             txt_STT.Text = LV_Data.SelectedItems[0].SubItems[0].Text;
             txt_NguoiTra.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
@@ -213,14 +212,14 @@ namespace Spending_manager_app
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if (vi == -1)
+                return;
             if (check())
             {
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
                 Wallet wallet = wallets[vi];
                 double a = double.Parse(txt_Sotien.Text);
-                /*if (a > 0)
-                    a = a * -1;*/
-                wallet.CreateLoan(a, txt_NguoiVay.Text,txt_NoiDung.Text);
+                wallet.CreateLoan(a, txt_NguoiVay.Text,txt_NoiDung.Text,txt_NgayChoVay.Value);
 
                 //------------
                 wallet.Load();
@@ -228,8 +227,6 @@ namespace Spending_manager_app
                 LoadDataToListView(loans);
             }
         }
-
-
         #endregion
 
         #region [ ThuNo ]
@@ -242,7 +239,7 @@ namespace Spending_manager_app
             int thuno;
             thuno = int.Parse(txt_STT.Text);
             Loan loan = loans[thuno-1];
-            wallet.PayLoan(loan);
+            wallet.PayLoan(loan,txt_NgayThuNo.Value);
 
             wallet.Load();
             List<Loan> loanss = wallet.GetLoans();

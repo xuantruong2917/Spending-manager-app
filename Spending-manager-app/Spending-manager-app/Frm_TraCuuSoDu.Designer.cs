@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbb_DenVi = new System.Windows.Forms.ComboBox();
+            this.cbb_TuVi = new System.Windows.Forms.ComboBox();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.btn_Chuyen = new System.Windows.Forms.Button();
             this.txt_SoTien = new System.Windows.Forms.TextBox();
-            this.txt_NgayChuyen = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,8 +44,7 @@
             this.LV_Data = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbb_TuVi = new System.Windows.Forms.ComboBox();
-            this.cbb_DenVi = new System.Windows.Forms.ComboBox();
+            this.txt_NgayChuyen = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,12 +54,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txt_NgayChuyen);
             this.panel1.Controls.Add(this.cbb_DenVi);
             this.panel1.Controls.Add(this.cbb_TuVi);
             this.panel1.Controls.Add(this.btn_Refresh);
             this.panel1.Controls.Add(this.btn_Chuyen);
             this.panel1.Controls.Add(this.txt_SoTien);
-            this.panel1.Controls.Add(this.txt_NgayChuyen);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -70,6 +70,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(452, 624);
             this.panel1.TabIndex = 1;
+            // 
+            // cbb_DenVi
+            // 
+            this.cbb_DenVi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_DenVi.FormattingEnabled = true;
+            this.cbb_DenVi.Location = new System.Drawing.Point(201, 229);
+            this.cbb_DenVi.Name = "cbb_DenVi";
+            this.cbb_DenVi.Size = new System.Drawing.Size(200, 30);
+            this.cbb_DenVi.TabIndex = 13;
+            this.cbb_DenVi.Text = "  ---Nhấp Để Chọn---";
+            // 
+            // cbb_TuVi
+            // 
+            this.cbb_TuVi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TuVi.FormattingEnabled = true;
+            this.cbb_TuVi.Location = new System.Drawing.Point(201, 176);
+            this.cbb_TuVi.Name = "cbb_TuVi";
+            this.cbb_TuVi.Size = new System.Drawing.Size(200, 30);
+            this.cbb_TuVi.TabIndex = 12;
+            this.cbb_TuVi.Text = "  ---Nhấp Để Chọn---";
             // 
             // btn_Refresh
             // 
@@ -106,14 +126,6 @@
             this.txt_SoTien.Name = "txt_SoTien";
             this.txt_SoTien.Size = new System.Drawing.Size(200, 30);
             this.txt_SoTien.TabIndex = 9;
-            // 
-            // txt_NgayChuyen
-            // 
-            this.txt_NgayChuyen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NgayChuyen.Location = new System.Drawing.Point(201, 111);
-            this.txt_NgayChuyen.Name = "txt_NgayChuyen";
-            this.txt_NgayChuyen.Size = new System.Drawing.Size(200, 30);
-            this.txt_NgayChuyen.TabIndex = 6;
             // 
             // panel4
             // 
@@ -222,25 +234,18 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Số Dư";
             // 
-            // cbb_TuVi
+            // txt_NgayChuyen
             // 
-            this.cbb_TuVi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_TuVi.FormattingEnabled = true;
-            this.cbb_TuVi.Location = new System.Drawing.Point(201, 176);
-            this.cbb_TuVi.Name = "cbb_TuVi";
-            this.cbb_TuVi.Size = new System.Drawing.Size(200, 30);
-            this.cbb_TuVi.TabIndex = 12;
-            this.cbb_TuVi.Text = "  ---Nhấp Để Chọn---";
-            // 
-            // cbb_DenVi
-            // 
-            this.cbb_DenVi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_DenVi.FormattingEnabled = true;
-            this.cbb_DenVi.Location = new System.Drawing.Point(201, 229);
-            this.cbb_DenVi.Name = "cbb_DenVi";
-            this.cbb_DenVi.Size = new System.Drawing.Size(200, 30);
-            this.cbb_DenVi.TabIndex = 13;
-            this.cbb_DenVi.Text = "  ---Nhấp Để Chọn---";
+            this.txt_NgayChuyen.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_NgayChuyen.CustomFormat = "HH:MM - dd/MM/yyyy";
+            this.txt_NgayChuyen.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NgayChuyen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_NgayChuyen.Location = new System.Drawing.Point(201, 103);
+            this.txt_NgayChuyen.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NgayChuyen.Name = "txt_NgayChuyen";
+            this.txt_NgayChuyen.Size = new System.Drawing.Size(200, 30);
+            this.txt_NgayChuyen.TabIndex = 28;
+            this.txt_NgayChuyen.Value = new System.DateTime(2022, 6, 15, 1, 41, 2, 0);
             // 
             // Frm_TraCuuSoDu_ChuyenTienGiuaCacVi
             // 
@@ -272,7 +277,6 @@
         private System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.Button btn_Chuyen;
         private System.Windows.Forms.TextBox txt_SoTien;
-        private System.Windows.Forms.TextBox txt_NgayChuyen;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -285,5 +289,6 @@
         private System.Windows.Forms.ListView LV_Data;
         private System.Windows.Forms.ComboBox cbb_DenVi;
         private System.Windows.Forms.ComboBox cbb_TuVi;
+        private System.Windows.Forms.DateTimePicker txt_NgayChuyen;
     }
 }

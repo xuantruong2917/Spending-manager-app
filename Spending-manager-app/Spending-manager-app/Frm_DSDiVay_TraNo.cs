@@ -183,6 +183,8 @@ namespace Spending_manager_app
             txt_SoTien.Text = LV_Data.SelectedItems[0].SubItems[4].Text;
             txt_NgayVay.Text = LV_Data.SelectedItems[0].SubItems[5].Text;
             txt_NgayTra.Text = LV_Data.SelectedItems[0].SubItems[6].Text;
+            if (LV_Data.SelectedItems[0].SubItems[6].Text == "1/1/0001 12:00:00 AM")
+                txt_NgayTra.Text = "";
             cb_TraTien.Checked = bool.Parse(LV_Data.SelectedItems[0].SubItems[7].Text);
             txt_STT.Text = LV_Data.SelectedItems[0].SubItems[0].Text;
             txt_NguoiNhan.Text = LV_Data.SelectedItems[0].SubItems[2].Text;
@@ -213,6 +215,8 @@ namespace Spending_manager_app
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if (vi == -1)
+                return;
             if (check())
             {
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
@@ -241,7 +245,7 @@ namespace Spending_manager_app
             int trano;
             trano = int.Parse(txt_STT.Text);
             Debt debt = debts[trano-1];
-            wallet.PayDebt(debt);
+            wallet.PayDebt(debt,txt_NgayTraNo.Value);
 
             wallet.Load();
             List<Debt> debtss = wallet.GetDebts();

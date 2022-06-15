@@ -166,7 +166,7 @@ namespace Spending_manager_app
                 {
                     Wallet wallet_ViTien = wallets[tuvi];
                     Wallet wallet_Bank = wallets[denvi];
-                    wallet_ViTien.Transfer(double.Parse(txt_SoTien.Text.ToString()),wallet_Bank);
+                    wallet_ViTien.Transfer(double.Parse(txt_SoTien.Text.ToString()),wallet_Bank,txt_NgayChuyen.Value);
                     
                     
                     LoadDataToListView(wallets);
