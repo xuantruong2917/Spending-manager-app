@@ -19,7 +19,6 @@ namespace Spending_manager_app
 
         private void Frm_Menu_Load(object sender, EventArgs e)
         {
-            this.Hide();
             Account account = AppPlatform.API.GetAccountInfo();
 
             this.Focus();
@@ -31,8 +30,6 @@ namespace Spending_manager_app
             {
                 btn_ChonVi.Visible = false;
             }
-
-            this.Show();
 
         }
 

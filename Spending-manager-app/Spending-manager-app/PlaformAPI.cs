@@ -233,6 +233,12 @@ namespace Spending_manager_app
                     this.firstLogin = false;
 
 
+                for (var i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    var form = Application.OpenForms[i];
+                    form.Hide();
+                }
+
                 Frm_Login loginForm = new Frm_Login();
                 loginForm.ShowDialog();
 
@@ -241,9 +247,15 @@ namespace Spending_manager_app
                 if (loginForm.close)
                 {
                     if (MessageBox.Show("Bạn có chắc là muốn thoát chương trình không?", "Thông báo",MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        Application.Exit();
-                    }
+                        Environment.Exit(0);
+                    
+                }
+                for (var i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    var form = Application.OpenForms[i];
+                    form.Show();
+                    form.Focus();
+                    form.BringToFront();
                 }
             }
 
@@ -265,6 +277,7 @@ namespace Spending_manager_app
                     dynamic res = AppPlatform.JSONParse<object>(response.Content);
                     MessageBox.Show($"Lỗi xác thực: {res.error}", "Có lỗi xảy ra", MessageBoxButtons.OK);
                     this.token = "";
+                    this.isLogin = false;
                     return POSTData(path, body);
                 }
                 else if(response.StatusCode != HttpStatusCode.OK)
