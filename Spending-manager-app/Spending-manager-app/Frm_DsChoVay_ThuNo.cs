@@ -128,7 +128,10 @@ namespace Spending_manager_app
 
                 DateTime abc = new DateTime(loans[i].paymentedOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = abc.ToString();
+                if (abc.ToString() == "1/1/0001 12:00:00 AM")
+                    lvsi.Text = "";
+                else
+                     lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();

@@ -122,28 +122,32 @@ namespace Spending_manager_app
 
         private void btn_Load_Click(object sender, EventArgs e)
         {
-            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---")
+            if (cbb_Vi.Text == "  ---Nhấp Để Chọn---" || cbb_Vi.Text == "")
+            {
                 MessageBox.Show("Vui long chon vi");
+                return;
+            }
 
             else
             {
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
-                int x = 0; 
-                while(x != wallets.Count  )
+                int x = 0;
+                while (x != wallets.Count)
                 {
-                    if (cbb_Vi.Items[x].ToString() == wallets[x].walletName.ToString())
+                    if (cbb_Vi.Text == wallets[x].walletName.ToString())
                     {
                         vi = x;
-                        x = wallets.Count ;
-                    }      
+                        x = wallets.Count;
+                    }
                     else
                         x++;
                 }
-                if(vi>-1)
+                if (vi > -1)
                 {
                     Wallet wallet = wallets[vi];
                     List<Transaction> transactions = wallet.GetTransactions();
                     LoadDataToListView(transactions);
+                    return;
                 }
             }
                 

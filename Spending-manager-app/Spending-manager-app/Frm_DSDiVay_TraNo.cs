@@ -130,7 +130,10 @@ namespace Spending_manager_app
 
                 DateTime abd = new DateTime(debts[i].paymentedOn);
                 lvsi = new ListViewItem.ListViewSubItem();
-                lvsi.Text = abd.ToString();
+                if (abc.ToString() == "1/1/0001 12:00:00 AM")
+                    lvsi.Text = "";
+                else
+                    lvsi.Text = abc.ToString();
                 lvi.SubItems.Add(lvsi);
 
                 lvsi = new ListViewItem.ListViewSubItem();
@@ -222,7 +225,7 @@ namespace Spending_manager_app
                 List<Wallet> wallets = AppPlatform.API.GetWallets();
                 Wallet wallet = wallets[vi];
 
-                wallet.CreateDebt(double.Parse(txt_SoTien.Text), txt_NguoiChoVay.Text, txt_NoiDung.Text);
+                wallet.CreateDebt(double.Parse(txt_SoTien.Text), txt_NguoiChoVay.Text, txt_NoiDung.Text,txt_NgayVay.Value);
 
                 //------------
                 wallet.Load();

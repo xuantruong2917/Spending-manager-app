@@ -38,6 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_NgayTraNo = new System.Windows.Forms.DateTimePicker();
             this.txt_NguoiNhan = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_SoTien = new System.Windows.Forms.TextBox();
@@ -48,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_NgayVay = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.cb_TraTien = new System.Windows.Forms.CheckBox();
             this.txt_NoiDung = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.LV_Data = new System.Windows.Forms.ListView();
-            this.txt_NgayVay = new System.Windows.Forms.DateTimePicker();
-            this.txt_NgayTraNo = new System.Windows.Forms.DateTimePicker();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -168,16 +168,18 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.label7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(555, 58);
+            this.panel6.Size = new System.Drawing.Size(527, 58);
             this.panel6.TabIndex = 0;
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.txt_NgayTraNo);
             this.panel5.Controls.Add(this.txt_STT);
             this.panel5.Controls.Add(this.txt_NguoiNhan);
@@ -187,11 +189,24 @@
             this.panel5.Controls.Add(this.btn_Tra);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 408);
+            this.panel5.Location = new System.Drawing.Point(0, 388);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(555, 327);
+            this.panel5.Size = new System.Drawing.Size(531, 327);
             this.panel5.TabIndex = 9;
+            // 
+            // txt_NgayTraNo
+            // 
+            this.txt_NgayTraNo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_NgayTraNo.CustomFormat = "HH:MM - dd/MM/yyyy";
+            this.txt_NgayTraNo.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NgayTraNo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_NgayTraNo.Location = new System.Drawing.Point(211, 72);
+            this.txt_NgayTraNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NgayTraNo.Name = "txt_NgayTraNo";
+            this.txt_NgayTraNo.Size = new System.Drawing.Size(293, 30);
+            this.txt_NgayTraNo.TabIndex = 28;
+            this.txt_NgayTraNo.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
             // 
             // txt_NguoiNhan
             // 
@@ -205,12 +220,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.label6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(555, 64);
+            this.panel4.Size = new System.Drawing.Size(531, 64);
             this.panel4.TabIndex = 8;
             // 
             // txt_SoTien
@@ -287,6 +303,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.txt_NgayVay);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.cb_TraTien);
@@ -303,11 +320,24 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(489, 0);
+            this.panel3.Location = new System.Drawing.Point(487, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(555, 735);
+            this.panel3.Size = new System.Drawing.Size(535, 719);
             this.panel3.TabIndex = 3;
+            // 
+            // txt_NgayVay
+            // 
+            this.txt_NgayVay.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_NgayVay.CustomFormat = "HH:MM - dd/MM/yyyy";
+            this.txt_NgayVay.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NgayVay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txt_NgayVay.Location = new System.Drawing.Point(211, 70);
+            this.txt_NgayVay.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NgayVay.Name = "txt_NgayVay";
+            this.txt_NgayVay.Size = new System.Drawing.Size(293, 30);
+            this.txt_NgayVay.TabIndex = 28;
+            this.txt_NgayVay.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
             // 
             // label13
             // 
@@ -364,6 +394,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btn_Load);
             this.panel2.Controls.Add(this.cbb_Vi);
             this.panel2.Controls.Add(this.label11);
@@ -373,7 +404,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 129);
+            this.panel2.Size = new System.Drawing.Size(1022, 129);
             this.panel2.TabIndex = 0;
             // 
             // btn_Load
@@ -382,7 +413,7 @@
             this.btn_Load.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Load.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Load.ForeColor = System.Drawing.Color.White;
-            this.btn_Load.Location = new System.Drawing.Point(376, 64);
+            this.btn_Load.Location = new System.Drawing.Point(376, 55);
             this.btn_Load.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Load.Name = "btn_Load";
             this.btn_Load.Size = new System.Drawing.Size(91, 48);
@@ -395,7 +426,7 @@
             // 
             this.cbb_Vi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Vi.FormattingEnabled = true;
-            this.cbb_Vi.Location = new System.Drawing.Point(102, 76);
+            this.cbb_Vi.Location = new System.Drawing.Point(102, 67);
             this.cbb_Vi.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_Vi.Name = "cbb_Vi";
             this.cbb_Vi.Size = new System.Drawing.Size(249, 30);
@@ -406,7 +437,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 76);
+            this.label11.Location = new System.Drawing.Point(9, 67);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 25);
@@ -422,7 +453,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 735);
+            this.panel1.Size = new System.Drawing.Size(1022, 719);
             this.panel1.TabIndex = 2;
             // 
             // panel7
@@ -432,7 +463,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 129);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(487, 606);
+            this.panel7.Size = new System.Drawing.Size(487, 590);
             this.panel7.TabIndex = 1;
             // 
             // LV_Data
@@ -446,37 +477,11 @@
             this.LV_Data.Location = new System.Drawing.Point(0, 0);
             this.LV_Data.Margin = new System.Windows.Forms.Padding(6);
             this.LV_Data.Name = "LV_Data";
-            this.LV_Data.Size = new System.Drawing.Size(487, 606);
+            this.LV_Data.Size = new System.Drawing.Size(487, 590);
             this.LV_Data.TabIndex = 12;
             this.LV_Data.UseCompatibleStateImageBehavior = false;
             this.LV_Data.View = System.Windows.Forms.View.Details;
             this.LV_Data.ItemActivate += new System.EventHandler(this.LV_Data_ItemActivate);
-            // 
-            // txt_NgayVay
-            // 
-            this.txt_NgayVay.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt_NgayVay.CustomFormat = "HH:MM - dd/MM/yyyy";
-            this.txt_NgayVay.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txt_NgayVay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txt_NgayVay.Location = new System.Drawing.Point(211, 70);
-            this.txt_NgayVay.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_NgayVay.Name = "txt_NgayVay";
-            this.txt_NgayVay.Size = new System.Drawing.Size(293, 30);
-            this.txt_NgayVay.TabIndex = 28;
-            this.txt_NgayVay.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
-            // 
-            // txt_NgayTraNo
-            // 
-            this.txt_NgayTraNo.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt_NgayTraNo.CustomFormat = "HH:MM - dd/MM/yyyy";
-            this.txt_NgayTraNo.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txt_NgayTraNo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txt_NgayTraNo.Location = new System.Drawing.Point(211, 72);
-            this.txt_NgayTraNo.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_NgayTraNo.Name = "txt_NgayTraNo";
-            this.txt_NgayTraNo.Size = new System.Drawing.Size(293, 30);
-            this.txt_NgayTraNo.TabIndex = 28;
-            this.txt_NgayTraNo.Value = new System.DateTime(2022, 6, 14, 22, 46, 33, 0);
             // 
             // Frm_DSDiVay_TraNo
             // 
@@ -484,7 +489,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Spending_manager_app.Properties.Resources.Thiết_kế_chưa_có_tên__3_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1044, 735);
+            this.ClientSize = new System.Drawing.Size(1022, 719);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -493,7 +498,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_DSDiVay_TraNo";
             this.ShowIcon = false;
-            this.Text = "Vay Nợ";
+            this.Text = "Đi Vay - Trả Nợ";
             this.Load += new System.EventHandler(this.Frm_DSDiVay_TraNo_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
