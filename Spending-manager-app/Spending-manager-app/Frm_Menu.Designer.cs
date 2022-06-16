@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.btn_ChonVi = new System.Windows.Forms.Button();
             this.btn_ChucNang = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             this.btn_DSThuTien = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lbl_Name);
             this.panel1.Controls.Add(this.btn_ChonVi);
             this.panel1.Controls.Add(this.btn_ChucNang);
@@ -75,6 +78,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 734);
             this.panel1.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Spending_manager_app.Properties.Resources.Thiết_kế_chưa_có_tên2;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 66);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(266, 194);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lbl_Name
             // 
@@ -205,7 +219,7 @@
             this.txt_NgayDK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NgayDK.ForeColor = System.Drawing.Color.Black;
             this.txt_NgayDK.Location = new System.Drawing.Point(269, 331);
-            this.txt_NgayDK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_NgayDK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NgayDK.Name = "txt_NgayDK";
             this.txt_NgayDK.ReadOnly = true;
             this.txt_NgayDK.Size = new System.Drawing.Size(276, 30);
@@ -230,7 +244,7 @@
             this.txt_DiaChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaChi.ForeColor = System.Drawing.Color.Black;
             this.txt_DiaChi.Location = new System.Drawing.Point(269, 245);
-            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(276, 30);
             this.txt_DiaChi.TabIndex = 74;
@@ -254,7 +268,7 @@
             this.txt_SDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SDT.ForeColor = System.Drawing.Color.Black;
             this.txt_SDT.Location = new System.Drawing.Point(269, 159);
-            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(276, 30);
             this.txt_SDT.TabIndex = 72;
@@ -278,7 +292,7 @@
             this.txt_FullName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FullName.ForeColor = System.Drawing.Color.Black;
             this.txt_FullName.Location = new System.Drawing.Point(269, 81);
-            this.txt_FullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_FullName.Margin = new System.Windows.Forms.Padding(4);
             this.txt_FullName.Name = "txt_FullName";
             this.txt_FullName.Size = new System.Drawing.Size(276, 30);
             this.txt_FullName.TabIndex = 70;
@@ -431,6 +445,7 @@
             this.Activated += new System.EventHandler(this.Frm_Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -467,5 +482,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Button btn_ThongTinCaNhan;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

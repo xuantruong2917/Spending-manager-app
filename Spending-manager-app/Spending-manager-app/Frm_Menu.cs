@@ -143,9 +143,13 @@ namespace Spending_manager_app
             account.ChangeInfo(txt_FullName.Text, txt_SDT.Text, txt_DiaChi.Text);
         }
 
+
         #endregion
 
-       
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

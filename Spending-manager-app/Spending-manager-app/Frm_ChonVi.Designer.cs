@@ -132,7 +132,7 @@
             "Bidv",
             "Vietcombank",
             "Tiền mặt"});
-            this.cbb_ChonVi.Location = new System.Drawing.Point(195, 97);
+            this.cbb_ChonVi.Location = new System.Drawing.Point(195, 98);
             this.cbb_ChonVi.Name = "cbb_ChonVi";
             this.cbb_ChonVi.Size = new System.Drawing.Size(243, 33);
             this.cbb_ChonVi.TabIndex = 27;

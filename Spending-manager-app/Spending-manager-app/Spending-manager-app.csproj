@@ -287,5 +287,11 @@
   <ItemGroup>
     <None Include="Resources\Thiết kế chưa có tên %284%291.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

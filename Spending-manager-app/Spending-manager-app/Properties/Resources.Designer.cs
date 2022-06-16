@@ -123,6 +123,26 @@ namespace Spending_manager_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên1 {
+            get {
+                object obj = ResourceManager.GetObject("Thiết kế chưa có tên1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên2 {
+            get {
+                object obj = ResourceManager.GetObject("Thiết kế chưa có tên2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z3466724940707_d17f13abdcc186adc8fc485b9ab7257e {
             get {
                 object obj = ResourceManager.GetObject("z3466724940707_d17f13abdcc186adc8fc485b9ab7257e", resourceCulture);

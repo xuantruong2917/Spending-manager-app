@@ -74,7 +74,7 @@
             // txt_STT
             // 
             this.txt_STT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_STT.Location = new System.Drawing.Point(211, 197);
+            this.txt_STT.Location = new System.Drawing.Point(211, 198);
             this.txt_STT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_STT.Name = "txt_STT";
             this.txt_STT.Size = new System.Drawing.Size(296, 30);
